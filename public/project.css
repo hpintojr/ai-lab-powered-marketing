@@ -45,7 +45,7 @@ details p { max-width: 72ch; }
 .endcard p { margin: 0; color: #d6e7f7; font-size: .9rem; }
 .files { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 220px),1fr)); gap: 1rem; }
 .files .panel { margin: 0; }
-.files .panel h2 { font-size: 1.25rem; line-height: 1.25; letter-spacing: -.015em; margin: 0 0 .65rem; }
+.files .panel h2, .project-document h2 { font-size: 1.25rem; line-height: 1.25; letter-spacing: -.015em; margin: 0 0 .65rem; }
 .reader { max-width: 800px; }
 .toolbar { position: sticky; top: 0; z-index: 2; background: var(--paper); padding: .7rem 0; margin: 0 0 1.2rem; display: flex; gap: .5rem; flex-wrap: wrap; }
 .spoken { font-size: var(--reading-size, 1.25rem); line-height: 1.8; }
