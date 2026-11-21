@@ -47,7 +47,7 @@ const endCard = `<div class="endcard" aria-label="Mercury CRM closing screen pre
   <a class="button primary" href="${booking}">Book a strategy call</a>
   <p>We'll walk you through exactly how it builds. No pressure, just clarity.</p>
 </div>`;
-const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v3' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
+const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v4' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
 write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One campaign.</span>', 'An audio conversation about running AI agents as an organization, and a motion campaign for Mercury CRM. A learner project by Hamilton Pinto Jr.', `
   <section class="panel podcast" id="podcast" aria-labelledby="podcast-title">
     <div><span class="kicker">Thesis podcast</span><h2 id="podcast-title">The 18% Problem</h2>

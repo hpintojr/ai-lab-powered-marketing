@@ -104,7 +104,7 @@ function sceneTitle(ctx, scene, layout, t) {
     ['THE LOCAL SERVICE', 'Every town had', 'a computer guy.'],
     ['A NEW TECH WAVE', 'AI is that moment', 'again.'],
     ['THE WORK', 'Small businesses', 'need AI to…'],
-    ['U.S. CENSUS BUREAU', 'Less than', 'one in five.'],
+    ['U.S. CENSUS BUREAU', 'AI adoption', 'on Main Street.'],
     ['MERCURY CRM', 'An AI receptionist', 'for Main Street.'],
     ['LEADS TO FOLLOW-UP', 'One connected', 'pipeline.'],
     ['CUSTOMER RELATIONSHIPS', 'Your customers.', 'Your relationships.'],
@@ -137,13 +137,6 @@ function backdrop(ctx, H, old) {
   }
 
 }
-function iconTile(ctx, box, key, title, sub, old) {
-  const {x,y,w,h}=box;
-  shape(ctx,box,old ? '#fff2d7' : '#102d48',15,old ? '#70553650' : '#75beee50',1.4);
-  mark(ctx,key,x + 16,y+h*.22,Math.min(43,h*.52),old ? teal : sky);
-  fit(ctx,title,x+73,y+h*.19,26,old ? ink : ice,w-83,{weight:770});
-  if(sub) fit(ctx,sub,x+74,y+h*.56,16,old ? teal : muted,w-84,{weight:600});
-}
 function simplePhones(ctx, box, screen, t) {
   const {x,y,w,h}=box;
   const bloom = ctx.createRadialGradient(x+w*.5,y+h*.47,12,x+w*.5,y+h*.47,w*.5);
@@ -162,7 +155,8 @@ function simplePhones(ctx, box, screen, t) {
   shape(ctx,C(px,py,phoneW,phoneH),'#091222',19,'#729db9',2); ctx.restore();
   shape(ctx,C(px+10,py+10,phoneW-20,phoneH-20),'#173453',14);
   shape(ctx,C(px+phoneW*.34,py+17,phoneW*.32,6),'#071222',3);
-  fit(ctx,'Mercury CRM',px+phoneW*.5,py+phoneH*.21,23,ice,phoneW-24,{align:'center'});
+  const brandW=phoneW*.8, brandH=brandW*logo.height/logo.width;
+  ctx.drawImage(logo,px+(phoneW-brandW)/2,py+phoneH*.24-brandH/2,brandW,brandH);
   fit(ctx,screen,px+phoneW*.5,py+phoneH*.38,15,muted,phoneW-24,{align:'center'});
   const lines = 15;
   for (let i=0;i<lines;i++) {
@@ -349,33 +343,101 @@ function graphic(ctx, scene, box, t, tall) {
       ctx.restore();
     }
   } else if (scene === 3) {
-    shape(ctx,box,'#fff2d7',15,'#5f432c7d',1.6);
-    photo(ctx,2,C(x+w*.52,y+9,w*.48-9,h-18),progress(t,4),null,9);
-    label(ctx,'CLASSIFIEDS',x+19,y+h*.12,w*.43,coral);
-    fit(ctx,'COMPUTER',x+19,y+h*.31,44,ink,w*.43,{weight:900});
-    fit(ctx,'HELP',x+19,y+h*.48,52,teal,w*.43,{weight:900});
-    fit(ctx,'Networks / Email / Repairs',x+19,y+h*.82,18,ink,w*.43);
+    shape(ctx,box,'#fff1d7',5,'#554532',1.7);
+    shape(ctx,C(x+5,y+5,w-10,h-10),null,3,'#806b49',1);
+    photo(ctx,2,C(x+w*.59,y+9,w*.41-9,h-18),progress(t,4),null,3);
+    const tx=x+w*.047, tw=w*.50;
+    const head=Math.min(h*.174,tw*.23);
+    label(ctx,'CLASSIFIEDS',tx,y+h*.078,tw,coral);
+    mark(ctx,'computer',tx+tw*.82,y+h*.093,Math.min(30,tw*.16),ink,1.8);
+    for(const [i,name] of ['COMPUTER','HELP'].entries()){
+      const ty=y+h*(.196+i*.168), sweep=phase(t,.24+i*.26,.55);
+      if(sweep>0)shape(ctx,C(tx-2,ty+head*.43,tw*(i?.47:.92)*sweep,head*.53),'#f6d45e',2);
+      fit(ctx,name,tx,ty,head,ink,tw,{family:'Impact, "Arial Black"',weight:900});
+    }
+    const serif={family:'Georgia',weight:700};
+    fit(ctx,'Networks · Email · Repairs',tx,y+h*.555,Math.min(h*.091,tw*.09),ink,tw,serif);
+    fit(ctx,'Home & small business. Fast.',tx,y+h*.678,Math.min(h*.084,tw*.085),ink,tw,serif);
+    const contactY=y+h*.804;
+    fit(ctx,'Call Dave · 555-0142',tx,contactY,Math.min(h*.10,tw*.098),ink,tw,{family:'Consolas',weight:800});
+    const draw=phase(t,1.45,.69), midX=tx+tw*.48, midY=contactY+h*.051;
+    if(draw>0){
+      ctx.beginPath();
+      for(let i=0;i<=Math.ceil(draw*62);i++){
+        const angle=i/62*Math.PI*2+.34;
+        const wav=1+.027*Math.sin(angle*9)+.035*Math.cos(angle*13);
+        const xx=midX+Math.cos(angle)*tw*.535*wav;
+        const yy=midY+Math.sin(angle)*h*.087*wav;
+        if(i===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);
+      }
+      ctx.lineWidth=Math.max(2,h*.008);ctx.strokeStyle='#bb4b38';ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
+    }
   } else if (scene === 4) {
     simplePhones(ctx,box,'AI RECEPTIONIST',t);
   } else if (scene === 5) {
     drawSignal(ctx,box,t);
   } else if (scene === 6) {
-    shape(ctx,box,'#f4e7ce',17,'#8ac9ef82',1.5);
-    label(ctx,'BUSINESS TRENDS AND OUTLOOK SURVEY',x+22,y+h*.09,w-44,teal);
-    fit(ctx,'Firms with 4 or fewer employees',x+22,y+h*.26,25,ink,w-44);
-    const gap = 9, tile = (w-44-gap*4)/5, edge = Math.min(tile,h*.34);
-    for (let j=0;j<5;j++){
-      const px=x+22+j*(tile+gap), py=y+h*.45;
-      shape(ctx,C(px,py,tile,edge),j===0 ? '#cadecf' : '#e5d8bd',8);
-      mark(ctx,'shop',px+tile/2-edge*.23,py+edge*.26,edge*.46,j===0 ? teal : '#7f7767');
+    const s=phase(t,.03,.47);
+    const cardH=h*.72;
+    ctx.save();ctx.translate(0,14*(1-s));
+    ctx.shadowColor='#09142b8c';ctx.shadowBlur=18;ctx.shadowOffsetY=7;
+    ctx.beginPath();ctx.moveTo(x+1,y+5);ctx.lineTo(x+w*.29,y+2);ctx.lineTo(x+w*.72,y+6);ctx.lineTo(x+w-2,y);
+    ctx.lineTo(x+w-5,y+cardH-5);ctx.lineTo(x+w*.78,y+cardH);ctx.lineTo(x+w*.4,y+cardH-3);ctx.lineTo(x,y+cardH+2);ctx.closePath();
+    const stock=ctx.createLinearGradient(x,y,x+w,y+cardH);
+    stock.addColorStop(0,'#fff6e0');stock.addColorStop(1,'#ece0c5');
+    ctx.fillStyle=stock;ctx.fill();ctx.shadowBlur=0;ctx.shadowOffsetY=0;
+    const tx=x+w*.042, tw=w*.916;
+    fit(ctx,'U.S. CENSUS BUREAU · BUSINESS SURVEY',tx,y+cardH*.087,Math.min(23,cardH*.095),ink,tw,{weight:850});
+    rule(ctx,tx,y+cardH*.216,tx+tw,y+cardH*.216,'#726b5980',1);
+    const font=Math.min(w*.093,cardH*.213);
+    const headY=y+cardH*.272;
+    const serif={family:'Georgia',weight:900};
+    ctx.font='900 '+font+'px Georgia';
+    const inkWidth=Math.min(tw,ctx.measureText('Fewer than 1 in 5').width);
+    const stripe=phase(t,2.18,.53);
+    if(stripe>0)shape(ctx,C(tx-1,headY+font*.32,(inkWidth+3)*stripe,font*.68),'#a1c6ee',2);
+    fit(ctx,'Fewer than 1 in 5',tx,headY,font,'#192421',tw,serif);
+    fit(ctx,'small businesses use AI.',tx,y+cardH*.495,font,'#192421',tw,serif);
+    fit(ctx,'U.S. firms with 4 or fewer employees',tx,y+cardH*.777,Math.min(24,cardH*.122),ink,tw,{weight:800});
+    ctx.restore();
+    const d=Math.min(w*.143,h*.166);
+    for(let j=0;j<5;j++){
+      const after=t-(2.28+j*.19);
+      if(after<=0)continue;
+      const pop=snap(after), cx=x+w*(j+.5)/5, cy=y+h*.855;
+      ctx.save();ctx.translate(cx,cy+8*(1-pop));ctx.scale(pop,pop);
+      shape(ctx,C(-d/2,-d/2,d,d),'#1b376c',d*.25,'#90c5fa',1.2);
+      mark(ctx,'shop',-d*.27,-d*.28,d*.54,ice,1.7);
+      ctx.restore();
     }
-    fit(ctx,'Source: U.S. Census Bureau BTOS, Dec 2025–May 2026',x+22,y+h*.84,16,ink,w-44,{weight:620});
+    fit(ctx,'Source: U.S. Census Bureau BTOS, Dec 2025–May 2026',x+w*.5,y+h*.956,Math.min(h*.068,22),ice,w*.98,{align:'center',weight:680});
   } else if (scene === 7) {
-    const row = (h-22)/3;
-    [['phone','Answer calls','AI receptionist'],['calendar','Book appointments','Scheduling'],['check','Follow up','Keep the conversation going']].forEach(([icon,title,sub],i)=>{
-      const p = phase(t,i*.26); ctx.save(); ctx.globalAlpha*=p;
-      iconTile(ctx,C(x+25*(1-p),y+i*(row+11),w,row),icon,title,sub,false); ctx.restore();
-    });
+    const rowH=h*.29, glyph=Math.min(53,rowH*.65);
+    for(const [i,event] of serviceMarks.entries()){
+      const after=t-(.15+i*.76);
+      if(after<=0)continue;
+      const enter=snap(after), rowY=y+h*.062+i*rowH;
+      const tx=x+w*.19, textSize=Math.min(53,rowH*.56);
+      const tick=phase(after,.36,.26);
+      ctx.save();ctx.globalAlpha*=phase(after,0,.19);
+      ctx.translate(0,-38*(1-enter));
+      shape(ctx,C(x+5,rowY-4,glyph+9,glyph+9),'#dff2ff',glyph/2+5);
+      mark(ctx,event.icon,x+9+glyph*.16,rowY+glyph*.14,glyph*.56,'#275587',2);
+      fit(ctx,event.text,tx,rowY-2,textSize,ice,w*.65,{weight:850});
+      rule(ctx,tx,rowY+textSize*1.2,tx+w*.64,rowY+textSize*1.2,'#91c8fb50',1);
+      if(tick>0){
+        const kx=x+w*.865, ky=rowY+2;
+        const startX=kx+glyph*.10, startY=ky+glyph*.52, jointX=kx+glyph*.34, jointY=ky+glyph*.76;
+        ctx.beginPath();ctx.moveTo(startX,startY);
+        if(tick<.4)ctx.lineTo(mix(startX,jointX,tick/.4),mix(startY,jointY,tick/.4));
+        else {
+          ctx.lineTo(jointX,jointY);
+          ctx.lineTo(mix(jointX,kx+glyph*.91,(tick-.4)/.6),mix(jointY,ky+glyph*.18,(tick-.4)/.6));
+        }
+        ctx.strokeStyle=mint;ctx.lineWidth=Math.max(2,glyph*.094);ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
+      }
+      ctx.restore();
+    }
   } else if (scene === 8) {
     shape(ctx,box,'#122a44',16,'#71b4dd80',1.6);
     label(ctx,'PIPELINE · EXAMPLE',x+19,y+h*.08,w-38,mint);
