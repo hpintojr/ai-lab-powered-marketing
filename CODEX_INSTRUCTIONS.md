@@ -1,17 +1,18 @@
 # AI Lab 04 production and release
 
-The lab pairs a two-person audio adaptation of Hamilton Pinto Jr.’s thesis, *The 18% Problem: Running AI Like a Company, Not a Chatbot*, with a captioned Mercury CRM infographic commercial.
+The lab pairs a two-person audio adaptation of Hamilton Pinto Jr.’s thesis with a Mercury CRM commercial.
 
-## Current sources
+## Production sources
 
-- `public/files/Thesis_Podcast_TTS_v4.md` contains the host and guest turns, including the closing thank-you.
-- `public/files/Mercury_CRM_Commercial_Script.md` contains Hamilton’s original copy, the required four-tier end card, and the export formats.
-- `public/files/Recording_Script.md` is the 3–5 minute walkthrough for Hamilton to record in his voice.
-- `public/files/Verification_Record.md` records the tools, media checks, and remaining submission work.
-- `portfolio_sync/lab04_entry.json` is the current entry for `hpintojr/hpintojr`.
+- `public/files/Thesis_Podcast_TTS_v4.md` collects the podcast turns.
+- `public/files/Mercury_CRM_Creative_Brief.md` gives the design direction and campaign positioning.
+- `public/files/Mercury_CRM_Commercial_Script.md` records the release narration and deliverable formats.
+- `public/files/Recording_Script.md` is the 3–5 minute walkthrough Hamilton will read in his own voice.
+- `public/files/Production_Usage_Ledger.md` separates measured usage from Hamilton’s reported model choices.
+- `portfolio_sync/lab04_entry.json` mirrors the released portfolio entry.
 
-## Build and publish
+## Build and release
 
-Use `node scripts/build.mjs` to refresh the static pages. The showcase, reader and downloads are deployed as `public/` on Vercel. Retain the same podcast master in the standalone repository and on the thesis page. Media regeneration uses `node scripts/generate_assets.mjs`, Windows PowerShell and FFmpeg. Place the original ElevenLabs campaign narration and score in `.production/commercial.mp3` and `.production/score.mp3` before regenerating the video.
+Use `node scripts/build.mjs` to build the showcase, script reader, project files, and downloads. The same podcast master is deployed from the standalone repo and the thesis site.
 
-Keep the release credits factual. Gemini helped with the spec, Codex built the site and assembled the production, and ElevenLabs MCP created voices, score and caption timings. Claude on Otto3 is the planned walkthrough editor. The walkthrough and 30-second assessment cut remain open.
+Use `node scripts/render-mercury.mjs` to regenerate campaign files with Canvas and FFmpeg. Input voice and score files are placed locally as described in the README. The motion renderer draws each aspect separately and uses the timed narration in `production/mercury-timing.json`.

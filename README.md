@@ -1,10 +1,15 @@
 # MasterClass Executive AI Lab 04
 
-Hamilton Pinto Jr.’s project pairs a conversational podcast of *The 18% Problem* with a Mercury CRM campaign. The target [showcase](https://ai-lab-powered-marketing.vercel.app/) has the audio player, campaign and end-card preview, recording reader, and downloads.
+Hamilton Pinto Jr.’s project pairs a conversational podcast of *The 18% Problem* with a Mercury CRM motion campaign. The [live project](https://ai-lab-powered-marketing.vercel.app/) contains the podcast, finished commercial, recording reader, campaign exports, and project Markdown.
 
-```powershell
-node scripts/generate_assets.mjs
-node scripts/build.mjs
-```
+## Build
 
-The static output is `public/`. The project checks which media exports exist when generating markup. The walkthrough must be filmed with Hamilton’s original narration, then edited in Claude on Otto3. The [verification record](public/files/Verification_Record.md) records the production stack.
+Run `node scripts/build.mjs` to generate the static pages in `public/`.
+
+Run `npm install --prefix .production @napi-rs/canvas` once to prepare the Windows production workspace. Place the revised voice track at `.production/narration-v2.mp3` and the music bed at `.production/score.mp3`. The editable visual assets and narration-aligned timeline are in `production/`. With FFmpeg available, run `node scripts/render-mercury.mjs` to regenerate all three exports and the storyboard.
+
+## Project notes
+
+- [Mercury creative brief](public/files/Mercury_CRM_Creative_Brief.md)
+- [Models, time and token usage](public/files/Production_Usage_Ledger.md)
+- [Verification record](public/files/Verification_Record.md)

@@ -1,9 +1,7 @@
 # Voice and campaign production
 
-- Gemini developed the project specification with Hamilton. Codex adapted the source thesis, prepared the web surfaces and wired the campaign content.
-- Use ElevenLabs MCP Voice Design with separate audition briefs for the host and commercial narrator. The podcast format alternates a host and a guest and ends with an informal thank-you. Use ElevenLabs Text-to-Speech v4 for individual speaker turns. Preserve the exact Mercury commercial narration submitted by Hamilton.
-- An ElevenCreative Flow holds independent narration, visuals and instrumental music so an update to one asset can be reviewed without rebuilding the other stages. The campaign canvas is [Mercury CRM · Lab 04](https://elevenlabs.io/app/flows/Sc0KNesWfSLmFNE8nFdL).
-- Brand source is Hamilton’s Mercury Call Desk SVG. The Mercury symbol and MERCURY outlines carry forward into a new CRM wordmark. End-card copy is rendered directly so it matches the brief.
-- Produce 9:16 (Instagram Reels and YouTube Shorts), 16:9 (YouTube), and 4:5 (LinkedIn) versions with layout and captions appropriate to each frame.
-- For MasterClass, record the walkthrough in Hamilton’s own voice, show the finished commercial, and export MP4 or MOV under 500 MB. In the walkthrough distinguish the narration in the campaign and podcast from the live narration in the assessment.
-- Final walkthrough editing is planned in Claude on the Otto3 multi-agent production server. Record actual tool and model versions when that edit is exported.
+- Gemini helped shape the lab specification. Hamilton revisited the commercial brief with Muse. Codex adapted the scripts, directed the artwork, rendered the motion design, and built the web pages.
+- The podcast uses two custom ElevenLabs Voice Design voices and Text-to-Speech v4. The commercial reuses its separate custom narrator for the product-focused script.
+- The [Mercury CRM ElevenCreative Flow](https://elevenlabs.io/app/flows/Sc0KNesWfSLmFNE8nFdL) holds the campaign speech, generated artwork, soundtrack, and caption transcription. The final key art uses GPT Image 2.5 Sunburst through ElevenLabs. Music uses ElevenLabs Music v2.5. Scribe word timings drive the caption entrances, exits, and highlights.
+- The motion renderer composites publication-ready graphics and encodes three MP4s with Canvas and FFmpeg. The revised campaign frames the product as a receptionist and CRM system. Existing brand assets provide the updated Mercury CRM logo.
+- For MasterClass, film a 3–5 minute walkthrough in Hamilton’s voice, show the finished campaign, and export MP4 or MOV under 500 MB. Claude on Otto3 is the planned editor for the walkthrough.

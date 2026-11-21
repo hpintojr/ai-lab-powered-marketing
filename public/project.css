@@ -53,3 +53,17 @@ footer { background: var(--navy); color: #cddbed; padding: 1.6rem 0; }
 footer p { margin: .35rem 0; font-size: .92rem; }
 @media (max-width: 680px) { .podcast, .campaign { grid-template-columns: 1fr; } .cover { max-width: 260px; } .nav nav { gap: .65rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.project-document pre {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .7rem;
+  background: var(--paper);
+  color: var(--ink);
+  max-height: 32rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: .94rem/1.6 ui-monospace, Consolas, monospace;
+}

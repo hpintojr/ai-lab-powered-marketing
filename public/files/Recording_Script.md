@@ -22,9 +22,9 @@ I adapted the thesis into a conversation. The host asks the practical questions,
 
 > Screen cue — Show your ElevenCreative Flow, the original script, the voice choice, the visual and music stages, then play the finished campaign. Show the social exports and the closing screen.
 
-For the commercial I started with a memory. When local businesses first needed networks and email, somebody in town knew how to set them up. I used that analogy to make the AI services offer clear. Businesses now need help answering calls, booking appointments, and following up. The commercial is about who can provide that help and what Mercury can run for them.
+For the commercial I started with a memory. When local businesses first needed networks and email, somebody in town knew how to set them up. I used that analogy to make the role of an AI receptionist clear. Businesses now need help answering calls, booking appointments, and following up. The commercial shows how Mercury connects the receptionist, appointment booking, and follow-up in one pipeline.
 
-I used ElevenLabs through MCP to work on the voice and campaign stages. I directed the commercial voice separately from the two podcast roles. I kept the Mercury symbol, updated the lettering to Mercury CRM, and gave the closing screen one action. Book a strategy call. I also prepared the campaign for vertical, horizontal, and portrait feeds, because the same type and crop don’t work everywhere.
+I used ElevenLabs through MCP to work on the voice and campaign stages. I directed the commercial voice separately from the two podcast roles. I used a mid-century newspaper and Main Street imagery for the history. The campaign then cuts to navy, and word-timed captions carry the narration through the Mercury product flow. I gave the closing screen one action. Book a strategy call. I also prepared the campaign for vertical, horizontal, and portrait feeds, because the same type and crop don’t work everywhere.
 
 ## 3:20–4:05 · Judgment and handoff
 
@@ -32,4 +32,4 @@ I used ElevenLabs through MCP to work on the voice and campaign stages. I direct
 
 I’ll judge this by whether someone understands the offer and knows what to do next after they watch. For the thesis, the goal is simpler. A visitor should be able to press play and follow an idea about running AI agents while they’re doing something else.
 
-I used Gemini to shape the specification, Codex to build the project, and the ElevenLabs MCP to create the voice and campaign assets. I’m recording this walkthrough in my own voice. For the edit I’m using Claude on Otto3, my production server, where multiple agents can support the edit at the same time. The lab page has the assets and the record of what went into them.
+I used Gemini to shape the specification, Muse to revisit the commercial brief, and Codex with ChatGPT 6.2 Sol on high to build the project. Through ElevenLabs MCP I produced the voices, music, art, and caption timing. I’m recording this walkthrough in my own voice. For the edit I’m using Claude on Otto3, my production server, where multiple agents can support the edit at the same time. The lab page has the assets and the record of what went into them.
