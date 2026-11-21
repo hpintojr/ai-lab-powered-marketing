@@ -14,4 +14,4 @@ See [Models, time and token usage](./Production_Usage_Ledger.md) for reported an
 
 ## Submission
 
-Hamilton will film the human-narrated 3–5 minute walkthrough with the finished campaign visible. Claude on Otto3 is the planned walkthrough editor. The portfolio stays in progress until the walkthrough and submission are complete.
+Hamilton recorded the 4:15 walkthrough in his own voice and edited it with Claude on Otto3. The published cut shows the finished campaign and includes captions.

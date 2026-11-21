@@ -16,11 +16,13 @@ const hub = 'https://hamiltonpinto.com/MCX-AI-Labs';
 const booking = 'https://www.getmercurycrm.com/';
 const audio = 'media/thesis-podcast-v4.mp3';
 const walkthrough = 'media/lab04-walkthrough.mp4';
+const walkthroughPoster = 'media/lab04-walkthrough-poster.jpg';
+const walkthroughCaptions = 'media/lab04-walkthrough.srt';
 const campaign = 'media/mercury-crm-youtube.mp4';
 const commercialPoster = 'media/mercury-ad-poster.jpg';
 const transcript = read('files/Thesis_Podcast_TTS_v4.md').trim().split(/\r?\n\r?\n/).slice(2);
 const transcriptHtml = transcript.filter((_,i) => i % 2 === 0).map((role,i) => `<p><strong>${e(role.replaceAll('*',''))}</strong> ${e(transcript[i * 2 + 1])}</p>`).join('\n');
-const credit = `<footer><div class="credit-inner"><p><strong>Production</strong> · Gemini for specification · Muse for the revised brief · Codex (ChatGPT 6.2 Sol, high) for build and assembly · ElevenLabs MCP for voice and creative assets</p><p>Hamilton Pinto Jr. will film the walkthrough in his own voice and edit it with Claude on Otto3, his multi-agent production server.</p><p><a href="${hub}">MasterClass Executive AI Labs</a> · <a href="https://github.com/hpintojr/ai-lab-powered-marketing">GitHub</a></p></div></footer>`;
+const credit = `<footer><div class="credit-inner"><p><strong>Production</strong> · Gemini for specification · Muse for the revised brief · Codex (ChatGPT 6.2 Sol, high) for build and assembly · ElevenLabs MCP for voice and creative assets</p><p>Hamilton Pinto Jr. recorded the walkthrough in his own voice and edited it with Claude on Otto3, his multi-agent production server.</p><p><a href="${hub}">MasterClass Executive AI Labs</a> · <a href="https://github.com/hpintojr/ai-lab-powered-marketing">GitHub</a></p></div></footer>`;
 const shell = (title, heading, intro, body, options = {}) => `<!doctype html>
 <html lang="en">
 <head>
@@ -77,9 +79,9 @@ write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One camp
   </section>
   <section class="panel" id="walkthrough" aria-labelledby="walkthrough-title">
     <span class="kicker">MasterClass Executive submission</span><h2 id="walkthrough-title">Project walkthrough</h2>
-    ${exists(walkthrough) ? video(walkthrough, 'Hamilton Pinto Jr. presents AI Lab 04') : '<p>Hamilton’s 3–5 minute screen-recorded walkthrough is in production.</p>'}
-    <div class="actions"><a href="/script/">Open the recording reader</a><a href="/files/Verification_Record.md">View production and verification record</a></div>
-  </section>`, {actions:'<div class="actions"><a class="button primary" href="#podcast">Listen to the podcast</a><a class="button" href="#commercial">Explore the campaign</a></div>'}));
+    ${exists(walkthrough) ? video(walkthrough, 'Hamilton Pinto Jr. presents AI Lab 04', walkthroughPoster) : '<p>Hamilton’s 3–5 minute screen-recorded walkthrough is in production.</p>'}
+    <div class="actions"><a href="/script/">Read the recording script</a><a href="/files/Recording_Script.md" download>Download script (Markdown)</a>${exists(walkthroughCaptions) ? `<a href="/${walkthroughCaptions}" download>Download captions (SRT)</a>` : ''}<a href="/files/Verification_Record.md">View production and verification record</a></div>
+  </section>`, {actions:`<div class="actions"><a class="button primary" href="#podcast">Listen to the podcast</a><a class="button" href="#commercial">Explore the campaign</a>${exists(walkthrough) ? '<a class="button" href="#walkthrough">Watch the walkthrough</a>' : ''}</div>`}));
 const script = read('files/Recording_Script.md').trim().split(/\r?\n## /).slice(1);
 const readerHtml = script.map((section) => {
   const [heading, ...paragraphs] = section.trim().split(/\r?\n\r?\n/);
@@ -103,7 +105,8 @@ const downloads = [
   ['ElevenLabs workflow','Voice, music, and infographic production','files/ElevenLabs_MCP_Flows_Workflow.md'],
   ['Verification record','Stack, checks and submission status','files/Verification_Record.md'],
   ['Models, time and tokens','Project usage ledger','files/Production_Usage_Ledger.md'],
-  ['Project walkthrough','Hamilton’s own voice · MP4',walkthrough],
+  ['Project walkthrough','Hamilton’s own voice · 4:15 · MP4',walkthrough],
+  ['Walkthrough captions','Timed captions for the final cut · SRT',walkthroughCaptions],
 ];
 write('downloads/index.html', shell('Downloads', 'Project files', 'Download the scripts, production notes and available media exports.', `<div class="files">${downloads.filter((item) => exists(item[2])).map(([label, desc, path]) => `<article class="panel"><h2>${e(label)}</h2><p>${e(desc)}</p><a href="/${path}" download aria-label="${e('Download ' + label)}">Download</a></article>`).join('\n')}</div>`));
 const documents = [

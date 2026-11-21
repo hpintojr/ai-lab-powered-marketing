@@ -1,0 +1,431 @@
+1
+00:00:00,180 --> 00:00:02,080
+I'm Hamilton Pinto Jr.
+
+2
+00:00:02,100 --> 00:00:02,960
+and for this lab,
+
+3
+00:00:02,960 --> 00:00:04,320
+I wanted to explain two kinds of
+
+4
+00:00:04,320 --> 00:00:05,980
+change that are easy to make sound
+
+5
+00:00:05,980 --> 00:00:06,820
+abstract.
+
+6
+00:00:07,060 --> 00:00:08,720
+The first is the opportunity for someone
+
+7
+00:00:08,720 --> 00:00:10,480
+who wants to run a local AI
+
+8
+00:00:10,480 --> 00:00:11,560
+service business.
+
+9
+00:00:11,960 --> 00:00:14,300
+The second is a responsibility that comes
+
+10
+00:00:14,300 --> 00:00:16,680
+with giving AI agents something real to
+
+11
+00:00:16,680 --> 00:00:17,280
+do.
+
+12
+00:00:17,440 --> 00:00:19,980
+Mercury CRM's audience is entrepreneurs who
+
+13
+00:00:19,980 --> 00:00:22,060
+can work with local businesses but don't
+
+14
+00:00:22,060 --> 00:00:23,820
+want to build all the technical infrastructure
+
+15
+00:00:23,820 --> 00:00:24,660
+themselves.
+
+16
+00:00:24,940 --> 00:00:26,520
+I wanted a short commercial that makes
+
+17
+00:00:26,520 --> 00:00:27,840
+that opportunity concrete.
+
+18
+00:00:27,840 --> 00:00:29,800
+I also wanted people to visit my
+
+19
+00:00:29,800 --> 00:00:31,400
+thesis and to have an easy way
+
+20
+00:00:31,400 --> 00:00:33,060
+to listen, so I made a podcast
+
+21
+00:00:33,060 --> 00:00:33,840
+version.
+
+22
+00:00:34,540 --> 00:00:36,920
+My thesis is called The 18% Problem,
+
+23
+00:00:37,060 --> 00:00:38,660
+Running AI Like a Company,
+
+24
+00:00:38,860 --> 00:00:39,900
+Not a Chatbot.
+
+25
+00:00:40,020 --> 00:00:41,820
+The numbers come from research cited in
+
+26
+00:00:41,820 --> 00:00:42,580
+the article.
+
+27
+00:00:43,480 --> 00:00:46,500
+Only 18% of organizations surveyed kept a
+
+28
+00:00:46,500 --> 00:00:48,940
+complete inventory of their AI agents.
+
+29
+00:00:49,340 --> 00:00:50,700
+To me, that sounds like a management
+
+30
+00:00:50,700 --> 00:00:51,160
+problem.
+
+31
+00:00:51,160 --> 00:00:53,520
+If an agent can send a customer
+
+32
+00:00:53,520 --> 00:00:56,340
+message or schedule something,
+
+33
+00:00:56,340 --> 00:00:57,940
+a human needs to know which agent
+
+34
+00:00:57,940 --> 00:01:00,060
+did it and what gave it permission.
+
+35
+00:01:00,140 --> 00:01:02,180
+I adapted the thesis into a conversation.
+
+36
+00:01:02,380 --> 00:01:04,840
+The host asked the practical questions and
+
+37
+00:01:04,840 --> 00:01:06,540
+the guest explained the named roles,
+
+38
+00:01:06,620 --> 00:01:08,900
+limited access, and approval steps.
+
+39
+00:01:08,900 --> 00:01:10,800
+I wanted listeners to hear what a
+
+40
+00:01:10,800 --> 00:01:13,280
+chain of custody means in ordinary work.
+
+41
+00:01:13,700 --> 00:01:15,840
+An agent requests an action,
+
+42
+00:01:15,880 --> 00:01:17,240
+someone approves it,
+
+43
+00:01:17,240 --> 00:01:18,480
+the action runs,
+
+44
+00:01:18,600 --> 00:01:20,060
+and we can see the results.
+
+45
+00:01:20,487 --> 00:01:22,887
+Host: What actually changes when you give software
+
+46
+00:01:22,887 --> 00:01:24,167
+Host: a job to do?
+
+47
+00:01:24,187 --> 00:01:25,887
+Guest: Think about the difference between writing
+
+48
+00:01:25,887 --> 00:01:27,847
+Guest: a reply and sending one.
+
+49
+00:01:28,047 --> 00:01:29,607
+Guest: The first is a draft.
+
+50
+00:01:29,727 --> 00:01:31,447
+Guest: The second reaches someone,
+
+51
+00:01:31,447 --> 00:01:32,527
+Guest: makes a commitment,
+
+52
+00:01:32,587 --> 00:01:35,187
+Guest: and leaves your company responsible for it.
+
+53
+00:01:35,440 --> 00:01:37,820
+The audio and transcripts are available on
+
+54
+00:01:37,820 --> 00:01:39,860
+my thesis and here in this lab.
+
+55
+00:01:39,940 --> 00:01:40,680
+For the commercial,
+
+56
+00:01:40,700 --> 00:01:42,000
+I started with a memory.
+
+57
+00:01:42,320 --> 00:01:44,200
+When local businesses first needed networks
+
+58
+00:01:44,200 --> 00:01:45,060
+and email,
+
+59
+00:01:45,540 --> 00:01:47,100
+somebody in town knew how to set
+
+60
+00:01:47,100 --> 00:01:47,840
+that up.
+
+61
+00:01:47,900 --> 00:01:49,400
+I used the analogy to make the
+
+62
+00:01:49,400 --> 00:01:51,320
+role of AI receptionist clear.
+
+63
+00:01:52,780 --> 00:01:55,120
+Businesses now need help answering calls,
+
+64
+00:01:55,300 --> 00:01:57,440
+booking appointments, and following up.
+
+65
+00:01:57,800 --> 00:01:59,760
+The commercial shows how Mercury connects
+
+66
+00:01:59,760 --> 00:02:01,980
+the receptionist, appointment booking,
+
+67
+00:02:01,980 --> 00:02:03,540
+and follow -up in one pipeline.
+
+68
+00:02:03,540 --> 00:02:06,300
+I used the ElevenLabs through my MCP
+
+69
+00:02:06,300 --> 00:02:08,520
+connection to work on the voice and
+
+70
+00:02:08,520 --> 00:02:09,660
+campaign stages.
+
+71
+00:02:10,120 --> 00:02:12,100
+I directed the commercial voice separately
+
+72
+00:02:12,100 --> 00:02:14,080
+from the two podcast roles.
+
+73
+00:02:14,340 --> 00:02:16,780
+I used a mid-century newspaper and Main Street
+
+74
+00:02:16,780 --> 00:02:18,200
+imagery for the history.
+
+75
+00:02:18,560 --> 00:02:20,940
+The campaign then cuts to navy and
+
+76
+00:02:20,940 --> 00:02:23,180
+word-timed captions carry the narrative through
+
+77
+00:02:23,180 --> 00:02:25,000
+a Mercury product flow.
+
+78
+00:02:25,080 --> 00:02:27,820
+I gave the closing screen one action:
+
+79
+00:02:27,980 --> 00:02:29,160
+Book a strategy call.
+
+80
+00:02:29,160 --> 00:02:32,020
+I also prepared the campaign for vertical,
+
+81
+00:02:32,320 --> 00:02:34,560
+horizontal, and portrait feeds because the
+
+82
+00:02:34,560 --> 00:02:36,820
+same type and crop don't work everywhere.
+
+83
+00:03:26,960 --> 00:03:28,900
+I'll judge this by whether someone understands
+
+84
+00:03:28,900 --> 00:03:30,980
+the offer and knows what to do
+
+85
+00:03:30,980 --> 00:03:32,480
+after they watch it.
+
+86
+00:03:32,540 --> 00:03:33,460
+For the thesis,
+
+87
+00:03:33,460 --> 00:03:34,820
+the goal is much simpler.
+
+88
+00:03:35,100 --> 00:03:36,980
+A visitor should be able to press play
+
+89
+00:03:36,980 --> 00:03:39,040
+and follow the idea about running an
+
+90
+00:03:39,040 --> 00:03:42,100
+AI agent while doing something else.
+
+91
+00:03:42,100 --> 00:03:42,980
+For my project,
+
+92
+00:03:42,980 --> 00:03:44,580
+I used Gemini to shape the specification
+
+93
+00:03:44,580 --> 00:03:45,600
+in scope,
+
+94
+00:03:46,280 --> 00:03:47,840
+Muse to revisit the commercial briefing,
+
+95
+00:03:47,840 --> 00:03:51,200
+and Codex with ChatGPT 6.2 Sol to
+
+96
+00:03:51,200 --> 00:03:52,260
+build the project.
+
+97
+00:03:52,840 --> 00:03:54,620
+Through the ElevenLabs MCP,
+
+98
+00:03:54,620 --> 00:03:55,800
+I produced the voice,
+
+99
+00:03:55,960 --> 00:03:56,640
+music,
+
+100
+00:03:57,080 --> 00:03:58,600
+art, and caption timing.
+
+101
+00:03:59,040 --> 00:04:01,100
+I'm recording this walkthrough in my own
+
+102
+00:04:01,100 --> 00:04:01,780
+voice,
+
+103
+00:04:02,120 --> 00:04:03,080
+and for the edit,
+
+104
+00:04:03,080 --> 00:04:06,160
+I'm using Claude Opus 5.5 and my production
+
+105
+00:04:06,160 --> 00:04:08,320
+server where multiple agents can support
+
+106
+00:04:08,320 --> 00:04:10,220
+the edit at the exact same time.
+
+107
+00:04:10,280 --> 00:04:12,380
+The lab page has the assets and
+
+108
+00:04:12,380 --> 00:04:14,260
+records of what went into them.

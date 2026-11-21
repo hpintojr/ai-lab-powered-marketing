@@ -9,7 +9,7 @@
 | Site, script adaptation, motion design and asset assembly | Codex with ChatGPT 6.2 Sol, high reasoning | Local turn context records `gpt-6.2-sol` at `high` for the main build and `medium` in the later motion pass |
 | Narration | ElevenLabs Voice Design and TTS v4 via MCP | Two custom podcast voices and one separate campaign narrator |
 | Campaign stills, soundtrack and word timings | GPT Image 2.5 Sunburst, ElevenLabs Music v2.5, and ElevenLabs Scribe via MCP | ElevenCreative campaign Flow |
-| Walkthrough editing | Claude Opus 5.5 and Ollama DeepSeek on Otto3 | Hamilton’s editor workflow credit. The walkthrough recording remains pending. |
+| Walkthrough editing | Claude Opus 5.5 and Ollama DeepSeek on Otto3 | Hamilton’s editor workflow credit. The recorded walkthrough is available on the project page. |
 | Composition, encodes and publishing | Canvas, Node.js, FFmpeg, GitHub and Vercel | Renderer, checked MP4 streams, and production sites |
 
 ## Measured Codex session

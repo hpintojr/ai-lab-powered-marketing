@@ -3,7 +3,7 @@
   "number": "04",
   "title": "AI-Powered Marketing: Campaigns, Voice, and Video",
   "status": "in-progress",
-  "when": "Walkthrough in production",
+  "when": "Walkthrough available",
   "cardSummary": "A two-voice thesis podcast and a 49-second Mercury CRM film with kinetic captions and three social formats.",
   "assetBase": "https://ai-lab-powered-marketing.vercel.app",
   "repo": {
@@ -26,7 +26,7 @@
     ],
     [
       "Walkthrough",
-      "Original narration<br><span class=\"dim\">In production</span>"
+      "Original narration<br><span class=\"dim\">4:15 · captioned</span>"
     ]
   ],
   "cta": [
@@ -34,6 +34,10 @@
       "label": "Listen to the podcast",
       "href": "#podcast",
       "primary": true
+    },
+    {
+      "label": "Watch the walkthrough",
+      "href": "#recording"
     },
     {
       "label": "Open the campaign showcase",
@@ -163,5 +167,13 @@
       ]
     }
   ],
-  "related": []
+  "related": [],
+  "video": {
+    "title": "My project walkthrough",
+    "caption": "I explain the thesis podcast, how I made the Mercury CRM campaign, and what the finished work is meant to do.",
+    "src": "/media/lab04-walkthrough.mp4",
+    "poster": "/media/lab04-walkthrough-poster.jpg",
+    "meta": "4:15 · 1080p · Captioned",
+    "script": "/script/"
+  }
 }
