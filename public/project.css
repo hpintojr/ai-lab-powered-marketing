@@ -38,7 +38,10 @@ main { padding: 2.75rem 0 4rem; }
 details { margin-top: 1rem; }
 summary { cursor: pointer; font-weight: 700; }
 details p { max-width: 72ch; }
-.campaign { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.4rem; }
+.campaign { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: 1.4rem; align-items: start; }
+.campaign > *, .podcast > * { min-width: 0; }
+.campaign video { margin-top: 1rem; }
+.actions a { overflow-wrap: anywhere; }
 .endcard { aspect-ratio: 16 / 10; border-radius: 1rem; background: radial-gradient(ellipse at 52% 24%,#18446b,#071426 72%); padding: clamp(1rem,3vw,2rem); display: grid; place-items: center; align-content: center; gap: .95rem; text-align: center; color: white; }
 .endcard img { width: min(88%, 275px); }
 .endcard h3 { margin: 0; color: white; font-size: clamp(1.35rem,3vw,2.1rem); }
@@ -52,7 +55,21 @@ details p { max-width: 72ch; }
 .cue { border-left: 3px solid #2587ff; padding: .5rem .8rem; background: #edf5fd; }
 footer { background: var(--navy); color: #cddbed; padding: 1.6rem 0; }
 footer p { margin: .35rem 0; font-size: .92rem; }
-@media (max-width: 680px) { .podcast, .campaign { grid-template-columns: 1fr; } .cover { max-width: 260px; } .nav nav { gap: .65rem; } }
+@media (max-width: 680px) {
+  .podcast, .campaign { grid-template-columns: 1fr; }
+  .cover { max-width: 320px; margin: 0 auto; }
+  .nav { padding: .75rem 0; }
+  .nav strong { font-size: .95rem; }
+  .nav nav { gap: .35rem 1rem; font-size: .92rem; }
+  .hero .actions { flex-direction: column; align-items: stretch; }
+  .hero .button { text-align: center; padding: .75rem 1rem; }
+  .panel { border-radius: 1rem; }
+  .panel .actions { flex-direction: column; align-items: flex-start; gap: .55rem; }
+  .endcard { aspect-ratio: auto; padding: 1.75rem 1.1rem; }
+  .endcard img { width: min(80%, 240px); }
+  .endcard .button { width: 100%; max-width: 300px; }
+  video { border-radius: .7rem; }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 .project-document pre {
