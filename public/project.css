@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; --navy: #071426; --paper: #f3f6fa; --ink: #10253b; --muted: #526577; --line: #d7e1eb; --blue: #0656a4; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 "Segoe UI", system-ui, sans-serif; }
+a { color: var(--blue); text-underline-offset: .2em; }
+a:focus-visible, button:focus-visible, audio:focus-visible, video:focus-visible, summary:focus-visible { outline: 3px solid #2587ff; outline-offset: 5px; }
+img, audio, video { display: block; max-width: 100%; }
+audio, video { width: 100%; }
+video { background: var(--navy); border-radius: .9rem; }
+.nav, main, .hero-inner, .credit-inner { width: min(1100px, calc(100% - 36px)); margin: auto; }
+.top { background: var(--navy); border-bottom: 1px solid #ffffff2a; color: white; }
+.nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .6rem 1.4rem; padding: .9rem 0; }
+.nav a, footer a { color: #dce9fb; }
+.nav nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.2rem; }
+.hero { background: radial-gradient(ellipse at 90% 30%, #153f72, transparent 62%), var(--navy); color: white; border-bottom: 7px solid transparent; border-image: linear-gradient(90deg,#439fdb 18%,#f5c400 18% 29%,#c3dfc2 29% 42%,#e4e4e4 42% 63%,#35458c 63% 85%,#f5c400 85%) 1; }
+.hero-inner { padding: clamp(2.6rem, 7vw, 5.6rem) 0; }
+.logos { display: flex; flex-wrap: wrap; gap: .9rem; align-items: center; margin-bottom: 1.65rem; }
+.logos img { width: min(33vw, 150px); height: auto; }
+.logos img:last-child { width: min(39vw, 190px); }
+.kicker { display: block; color: #417298; letter-spacing: .13em; font-size: .82rem; font-weight: 800; text-transform: uppercase; }
+.hero .kicker { color: #58e9e9; }
+h1, h2, h3 { line-height: 1.13; letter-spacing: -.036em; }
+h1 { max-width: 920px; font-size: clamp(2.7rem, 7vw, 5.5rem); margin: .65rem 0 1.15rem; }
+h1 span { color: #61d6f1; }
+h2 { font-size: clamp(1.8rem,4vw,3rem); margin: .45rem 0 .9rem; }
+h3 { font-size: 1.4rem; margin: .35rem 0 .6rem; }
+p { margin: .55rem 0 1rem; }
+.hero p { max-width: 55ch; color: #d6e7f7; }
+.byline { font-size: .9rem; }
+.actions { margin: 1.15rem 0 0; }
+.button { display: inline-block; font: inherit; font-weight: 750; text-decoration: none; padding: .56rem 1rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); background: #fff; cursor: pointer; }
+.primary { color: #071426; background: #6ad9f5; border-color: #6ad9f5; }
+main { padding: 2.75rem 0 4rem; }
+.panel { box-shadow: 0 7px 24px #17395d0b; background: white; border: 1px solid var(--line); border-radius: 1.25rem; padding: clamp(1rem,4vw,2rem); margin-bottom: 1.6rem; }
+.podcast { display: grid; grid-template-columns: minmax(0,2fr) minmax(180px,1fr); gap: clamp(1rem,4vw,2rem); align-items: center; }
+.cover { aspect-ratio: 1; object-fit: cover; border-radius: .9rem; width: 100%; }
+.small, .cue { color: var(--muted); font-size: .92rem; }
+details { margin-top: 1rem; }
+summary { cursor: pointer; font-weight: 700; }
+details p { max-width: 72ch; }
+.campaign { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.4rem; }
+.endcard { aspect-ratio: 16 / 10; border-radius: 1rem; background: radial-gradient(ellipse at 52% 24%,#18446b,#071426 72%); padding: clamp(1rem,3vw,2rem); display: grid; place-items: center; align-content: center; gap: .95rem; text-align: center; color: white; }
+.endcard img { width: min(88%, 275px); }
+.endcard h3 { margin: 0; color: white; font-size: clamp(1.35rem,3vw,2.1rem); }
+.endcard p { margin: 0; color: #d6e7f7; font-size: .9rem; }
+.files { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 220px),1fr)); gap: 1rem; }
+.files .panel { margin: 0; }
+.reader { max-width: 800px; }
+.toolbar { position: sticky; top: 0; z-index: 2; background: var(--paper); padding: .7rem 0; margin: 0 0 1.2rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+.spoken { font-size: var(--reading-size, 1.25rem); line-height: 1.8; }
+.cue { border-left: 3px solid #2587ff; padding: .5rem .8rem; background: #edf5fd; }
+footer { background: var(--navy); color: #cddbed; padding: 1.6rem 0; }
+footer p { margin: .35rem 0; font-size: .92rem; }
+@media (max-width: 680px) { .podcast, .campaign { grid-template-columns: 1fr; } .cover { max-width: 260px; } .nav nav { gap: .65rem; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -1,0 +1,1 @@
+Place Hamilton’s human-narrated 3–5 minute walkthrough here as lab04-walkthrough.mp4. Export MP4 or MOV below 500 MB for MasterClass. Run node scripts/build.mjs after adding the MP4.

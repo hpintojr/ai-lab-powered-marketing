@@ -2,104 +2,96 @@
   "slug": "ai-powered-marketing",
   "number": "04",
   "title": "AI-Powered Marketing: Campaigns, Voice, and Video",
-  "status": "completed",
-  "when": "Completed November 2026",
-  "cardSummary": "Hybrid ElevenLabs MCP + voice/campaign workflow pairing a TTS v4 podcast of The 18% Problem thesis with a 30s Mercury CRM commercial and custom end card.",
-  "assetBase": "/MCX-AI-Labs/files/ai-powered-marketing",
+  "status": "in-progress",
+  "when": "Walkthrough in production",
+  "cardSummary": "A two-voice podcast of The 18% Problem and a captioned Mercury CRM infographic campaign.",
+  "assetBase": "https://ai-lab-powered-marketing.vercel.app",
   "repo": {
     "name": "hpintojr/ai-lab-powered-marketing",
     "private": false
   },
-  "officialUrl": "https://ai-lab-powered-marketing.vercel.app",
   "hero": {
-    "a": "Two AI voices, one thesis.",
-    "b": "From the 18% governance problem to Mercury CRM."
+    "a": "One thesis.",
+    "b": "One campaign."
   },
-  "lede": "Built in a hybrid workflow connecting ElevenLabs MCP and ElevenLabs voice/campaign production, Lab 04 pairs a natural Text-to-Speech v4 podcast adaptation of my thesis—The 18% Problem: Running AI Like a Company, Not a Chatbot—with a 30-second Mercury CRM commercial and a custom Mercury CRM closing end card.",
+  "lede": "I adapted my thesis into a short conversation for readers who want to listen, and developed an infographic campaign that introduces Mercury CRM’s AI agency offer to local-services entrepreneurs.",
   "facts": [
     [
-      "Case",
-      "Mercury CRM &amp; 18% Thesis<br><span class=\"dim\">Hybrid MCP + Voice/Creative</span>"
+      "Podcast",
+      "The 18% Problem<br><span class=\"dim\">ElevenLabs v4 · two voices</span>"
     ],
     [
-      "Deliverables",
-      "TTS v4 Podcast + 30s Ad<br><span class=\"dim\">Custom Mercury CRM end card</span>"
+      "Campaign",
+      "Mercury CRM<br><span class=\"dim\">Captioned social exports</span>"
     ],
     [
-      "Portfolio",
-      "4 of 12 Labs Complete<br><span class=\"dim\">33% cohort progress</span>"
+      "Walkthrough",
+      "Original narration<br><span class=\"dim\">In production</span>"
     ]
   ],
   "cta": [
     {
-      "label": "Open project site",
-      "href": "https://ai-lab-powered-marketing.vercel.app",
+      "label": "Listen to the podcast",
+      "href": "#podcast",
       "primary": true
     },
     {
-      "label": "Read recording script",
+      "label": "Open the campaign showcase",
+      "href": "https://ai-lab-powered-marketing.vercel.app/#commercial"
+    },
+    {
+      "label": "Open recording reader",
       "href": "https://ai-lab-powered-marketing.vercel.app/script/"
     }
   ],
+  "audio": {
+    "title": "The 18% Problem",
+    "src": "/masterclass/the-18-percent-problem-running-ai-like-a-company-not-a-chatbot/thesis-podcast-v4.mp3",
+    "description": "A two-person audio adaptation of my thesis on the management layer AI agents need.",
+    "transcript": "/masterclass/the-18-percent-problem-running-ai-like-a-company-not-a-chatbot#podcast"
+  },
+  "approach": [
+    "<strong>Give readers an audio option.</strong> Use a conversational host and guest to unpack the inventory figure and the thesis in everyday terms.",
+    "<strong>Build the campaign around a familiar memory.</strong> Use infographics and captions to connect the local computer technician story to Mercury CRM’s offer.",
+    "<strong>Give each voice a role.</strong> Use ElevenLabs MCP for the host and guest, with separate voice direction for the campaign."
+  ],
   "showcase": {
-    "title": "The deliverables",
+    "title": "The project",
     "cards": [
       {
-        "tag": "Part 1 · TTS v4 Podcast",
-        "title": "The 18% Problem — Live Podcast Edition",
-        "body": "Natural ElevenLabs Text-to-Speech v4 audio adaptation introducing the author, title, and core thesis on running AI like a governed company rather than a chatbot.",
-        "href": "https://ai-lab-powered-marketing.vercel.app",
-        "link": "View Part 1 showcase"
-      },
-      {
-        "tag": "Part 2 · Commercial",
-        "title": "Mercury CRM 30s Ad & End Card",
-        "body": "Commercial script and closing screen featuring the Mercury CRM logo at top, 'Book a call to learn more', 'Book a strategy call' button, and 'We'll walk you through exactly how it builds. No pressure, just clarity.'",
+        "tag": "Campaign",
+        "title": "Mercury CRM infographic commercial",
+        "body": "Explore the campaign, closing screen and social versions.",
         "href": "https://ai-lab-powered-marketing.vercel.app/#commercial",
-        "link": "View Part 2 commercial"
+        "link": "Open campaign"
       },
       {
-        "tag": "Reader",
-        "title": "Walkthrough recording script",
-        "body": "Timed 3–5 minute presentation script with screen cues covering the thesis podcast, Mercury CRM commercial, and AI leadership impact.",
-        "href": "https://ai-lab-powered-marketing.vercel.app/script/",
-        "link": "Open script reader"
+        "tag": "Thesis",
+        "title": "The 18% Problem",
+        "body": "Read the thesis and the source notes behind the audio adaptation.",
+        "href": "https://hamiltonpinto.com/masterclass/the-18-percent-problem-running-ai-like-a-company-not-a-chatbot#podcast",
+        "link": "Read the thesis"
       }
     ]
   },
   "proof": [
     {
-      "group": "Scripts and narration",
+      "group": "Scripts and exports",
       "items": [
         {
-          "label": "Walkthrough recording script",
-          "href": "/files/Recording_Script.md",
-          "meta": "MD · 3–5 min presentation script"
+          "label": "Project downloads",
+          "href": "/downloads/",
+          "meta": "Podcast, social videos, scripts and closing screen"
         },
         {
-          "label": "Thesis podcast (TTS v4)",
-          "href": "/files/Thesis_Podcast_TTS_v4.md",
-          "meta": "MD · natural spoken thesis script"
+          "label": "Recording reader",
+          "href": "/script/",
+          "meta": "Timed human-narrated walkthrough"
         },
         {
-          "label": "Mercury CRM commercial script",
-          "href": "/files/Mercury_CRM_Commercial_Script.md",
-          "meta": "MD · 30s script + exact end-card spec"
-        }
-      ]
-    },
-    {
-      "group": "Workflow and verification",
-      "items": [
-        {
-          "label": "Hybrid MCP & creative workflow",
-          "href": "/files/ElevenLabs_MCP_Flows_Workflow.md",
-          "meta": "MD · MCP + voice/campaign notes"
-        },
-        {
-          "label": "Verification record",
+          "label": "Production and verification record",
           "href": "/files/Verification_Record.md",
-          "meta": "MD · checks and manual media drop-ins"
+          "meta": "Tools used and remaining submission steps"
         }
       ]
     }

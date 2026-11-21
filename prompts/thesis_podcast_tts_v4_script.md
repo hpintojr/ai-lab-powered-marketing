@@ -1,23 +1,39 @@
-# ElevenLabs TTS v4 Podcast Script — The 18% Problem
+# The 18% Problem: Running AI Like a Company, Not a Chatbot
 
-**Author:** Hamilton Pinto Jr.  
-**Title:** The 18% Problem: Running AI Like a Company, Not a Chatbot  
-**Model Target:** ElevenLabs Text-to-Speech v4 (`eleven_v4` / `eleven_multilingual_v2` / TTS v4)
+A conversational audio adaptation of Hamilton Pinto Jr.’s MasterClass Executive thesis. The host and guest are synthetic narrators. The figures and operating model are attributed to the [original thesis](https://hamiltonpinto.com/masterclass/the-18-percent-problem-running-ai-like-a-company-not-a-chatbot).
 
----
+**Host**
 
-## Spoken Script (Natural & Conversational)
+Welcome. Today we’re talking about The 18% Problem: Running AI Like a Company, Not a Chatbot, a MasterClass Executive thesis by Hamilton Pinto Junior. I keep coming back to that title. What actually changes when you give software a job to do?
 
-[warm, steady] Welcome in. I'm Hamilton Pinto Jr., and this is a podcast adaptation of my MasterClass Executive thesis, **The 18% Problem: Running AI Like a Company, Not a Chatbot**.
+**Guest**
 
-[thoughtful] When most people talk about AI right now, they are still obsessed with models—which prompt works best, which model is smartest this week, or how fast a single chatbot can answer a question. [emphatic] But the real bottleneck isn't model intelligence. It's management.
+Think about the difference between writing a reply and sending one. The first is a draft. The second reaches someone, makes a commitment, and leaves your company responsible for it. Once agents can act on your behalf, management starts to matter as much as model quality. You need to know which agents exist, what access they have, and who is accountable for the outcome.
 
-Only eighteen percent of organizations keep a complete inventory of the AI agents working for them. Think about that for a second. Eighty-two percent of organizations can't even list every agent acting on their behalf, what access it holds, or where the record lives.
+**Host**
 
-[calm, direct] I felt that contrast personally because I've spent months building the opposite—an AI operation run like a real company rather than a giant prompt box. Roles have clear ownership, written briefs, scoped permissions, and human approval gates before external or high-stakes actions ship.
+And that’s where the 18% comes in, right? The thesis cites IBM Think 2026 research that found only 18% of organizations kept a complete inventory of their AI agents. What does that look like on an ordinary workday?
 
-[measured] And if we're going to be leaders in this shift, we have to be honest about where systems are still exposed. Runaway loops, missing spend caps, context compaction dropping safety rules, unverified token lifetimes, and A2P or TCPA compliance aren't edge cases—they're operational realities.
+**Guest**
 
-[confident, clear] Here is the core thesis I want to leave you with: the next standard for AI fleets won't be a cleverer prompt. It will be a verifiable chain of custody—who acted, under whose authority, what was approved, and an append-only record nobody can quietly rewrite. AI isn't just a better chatbot. It's a new way of organizing work.
+Imagine that a customer gets a message they weren’t supposed to receive. If your team can’t tell which agent sent it or which permissions it used, you’re investigating from scratch. Hamilton describes giving each agent a named role, a clear brief, and scoped access. An agent can prepare the message. The authority to send it can go through a separate human approval. It’s a management decision you can apply to the next workflow you build.
 
-[calm, closing] If you want the full breakdown of how I spec'd this out with Gemini, built the site with Codex, and ran the editing pipeline through Claude on my Otto3 production server, check out the AI Lab project page and recording script.
+**Host**
+
+Okay, so first I can answer who works here and what they’re allowed to do. Hamilton also uses the phrase verifiable chain of custody. What would I actually be able to see?
+
+**Guest**
+
+Let’s say an agent books an appointment. A reviewer should be able to see four things. Which agent requested it, who or what approved it, the action it took, and the result that came back. Link those entries in a tamper-evident record and you can spot if someone changes the history later. That’s Hamilton’s proposal for agent operations. The inventory research tells us how far organizations have to go on the basics. The chain of custody is his argument for what comes next.
+
+**Host**
+
+If listeners want to try this with one agent this week, where would you have them start?
+
+**Guest**
+
+Pick one action your customers can see. Ask someone on your team to show you what the agent is allowed to do, who approved its last action, and where the result is recorded. Any question they can’t answer is a concrete place to start.
+
+**Host**
+
+I like that. One workflow, four things you can trace. Thanks for joining us and making this so practical. And thanks to everyone listening. The full thesis is right here on the site if you’d like to dig into it. See you next time.
