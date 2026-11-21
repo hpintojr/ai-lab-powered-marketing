@@ -471,30 +471,73 @@ function graphic(ctx, scene, box, t, tall) {
     fit(ctx,'YOUR BUSINESS',x1,y+h*.87,17,mint,w*.43,{align:'center'});
     fit(ctx,'YOUR CUSTOMER',x2,y+h*.87,17,mint,w*.43,{align:'center'});
   } else if (scene === 10) {
-    shape(ctx,box,'#f2e3ca',12,'#90c5dd99',1.6);
-    photo(ctx,3,C(x+w*.61,y+8,w*.39-8,h-16),progress(t,3)*.65,null,8);
-    const tagX=x+20, tagY=y+h*.16;
-    label(ctx,'CLASSIFIEDS  /  2026',tagX,tagY,w*.55,teal);
-    const fill=phase(t,.2,.56), wordY=y+h*.33;
-    ctx.save(); ctx.globalAlpha*=1-fill;
-    fit(ctx,'COMPUTER HELP',tagX,wordY,53,ink,w*.55,{weight:900});
-    rule(ctx,tagX,wordY+29,tagX+w*.53*phase(t,.08,.29),wordY+29,coral,3);
-    ctx.restore();
-    ctx.save(); ctx.globalAlpha*=fill;
-    fit(ctx,'AI HELP',tagX-9*(1-fill),wordY,63,teal,w*.55,{weight:900});
-    fit(ctx,'(949) 775-0451',tagX,y+h*.65,37,ink,w*.55,{weight:820});
-    fit(ctx,'Mercury AI demo',tagX,y+h*.84,18,teal,w*.55,{weight:650});
-    ctx.restore();
+    const paperH=h*(w>500?.84:1), tx=x+w*.049, tw=w*.902;
+    const paper=C(x,y,w,paperH);
+    shape(ctx,paper,'#f7ead1',5,'#526e91',2);
+    shape(ctx,C(x+6,y+6,w-12,paperH-12),null,2,'#7b8ea2',1);
+    const m=phase(t,1.16,.66);
+    const titleY=y+paperH*mix(.235,.208,m);
+    const titleSize=Math.min(w*.107,paperH*.18);
+    const typeface={family:'Impact, "Arial Black"',weight:900};
+    const oldSize=mix(titleSize, titleSize*.36,m);
+    const oldColor=m>.4?'#63706e':ink;
+    fit(ctx,'COMPUTER HELP',tx,titleY,oldSize,oldColor,tw,typeface);
+    const oldStrike=phase(t,.69,.43);
+    if(oldStrike>0){
+      ctx.font='900 '+oldSize+'px Impact';
+      const strikeW=Math.min(tw,ctx.measureText('COMPUTER HELP').width);
+      rule(ctx,tx-1,titleY+oldSize*.53,tx+strikeW*oldStrike,titleY+oldSize*.48,coral,Math.max(2,oldSize*.061));
+    }
+    const year=t<1.23?'2002':'2026', chipW=Math.min(119,w*.25), chipH=Math.min(38,paperH*.108);
+    label(ctx,'CLASSIFIEDS',tx,y+paperH*.089,tw*.63,teal);
+    capsule(ctx,year,x+w*.951-chipW,y+paperH*.062,chipW,t<1.23?ink:ice,t<1.23?'#e4ceb0':'#2868b9',chipH);
+    rule(ctx,tx,y+paperH*.172,tx+tw,y+paperH*.172,'#877e686e',1);
+
+    const clear=phase(t,1.34,.27), replace=phase(t,1.61,.36);
+    const bodyFont=Math.min(w*.052,paperH*.086);
+    if(clear<1){
+      ctx.save();ctx.globalAlpha*=1-clear;
+      const rows=['Networks · Email · Repairs','Call Dave · 555-0142'];
+      for(const [i,line] of rows.entries()){
+        const ry=y+paperH*(.556+i*.19), appear=phase(t,.91+i*.20,.41);
+        const opts={family:i===0?'Georgia':'Consolas',weight:760};
+        fit(ctx,line,tx,ry,bodyFont,ink,tw,opts);
+        if(appear>0){
+          ctx.font='760 '+bodyFont+'px '+opts.family;
+          const lineW=Math.min(tw,ctx.measureText(line).width);
+          rule(ctx,tx,ry+bodyFont*.49,tx+lineW*appear,ry+bodyFont*.45,coral,Math.max(2,bodyFont*.14));
+        }
+      }
+      ctx.restore();
+    }
+    if(replace>0){
+      ctx.save();ctx.globalAlpha*=replace;ctx.translate(0,9*(1-replace));
+      const aiSize=Math.min(w*.17,paperH*.255);
+      fit(ctx,'AI HELP',tx,y+paperH*.314,aiSize,'#205aa5',tw,typeface);
+      fit(ctx,'AI receptionist · Booking · Follow-up',tx,y+paperH*.606,bodyFont,ink,tw,{weight:830});
+      const rowY=y+paperH*.766;
+      rule(ctx,tx,rowY,tx+tw,rowY,'#877e687e',1);
+      const iconD=Math.min(29,paperH*.098);
+      mark(ctx,'phone',tx,rowY+paperH*.065,iconD,'#205aa5',2.1);
+      fit(ctx,'Mercury AI demo · (949) 775-0451',tx+iconD+10,rowY+paperH*.058,bodyFont,ink,tw-iconD-10,{weight:820});
+      ctx.restore();
+    }
   }
+}
+function closingLayout(H,wide) {
+  const top=H*(wide?.15:.262);
+  const logoW=wide?330:510;
+  const logoH=logoW*logo.height/logo.width;
+  const buttonY=top+logoH+(wide?100:168), buttonH=wide?59:73;
+  const noteY=buttonY+buttonH+(wide?30:35);
+  return {top,logoW,logoH,buttonY,buttonH,noteY,captionY:noteY+(wide?64:92)};
 }
 function closing(ctx, H, wide, t) {
   const center = 480;
-  const top = H * (wide ? .105 : .19);
-  const logoW = wide ? 330 : 510;
-  const logoH = logoW * logo.height / logo.width;
+  const {top,logoW,logoH,buttonY:y,buttonH:bh,noteY}=closingLayout(H,wide);
   ctx.drawImage(logo,center-logoW/2,top,logoW,logoH);
   fit(ctx,'Book a call to learn more',center,top+logoH+(wide?31:61),wide?46:60,ice,790,{align:'center',weight:820});
-  const x=center-(wide?195:242), w=wide?390:484, y=top+logoH+(wide?100:168), bh=wide?59:73;
+  const x=center-(wide?195:242), w=wide?390:484;
   const beat=Math.max(0,Math.sin(Math.PI*progress(t-.28,1.25)));
   const echo=progress(t-.25,1.1);
   if(echo>0&&echo<1) {
@@ -508,8 +551,8 @@ function closing(ctx, H, wide, t) {
   ctx.shadowBlur=0;
   fit(ctx,'Book a strategy call',0,-15,29,navy,w-28,{align:'center',weight:850});ctx.restore();
   const note = "We'll walk you through exactly how it builds.";
-  fit(ctx,note,center,y+bh+21,wide?22:27,muted,746,{align:'center',weight:600});
-  fit(ctx,'No pressure, just clarity.',center,y+bh+(wide?51:58),wide?20:24,muted,746,{align:'center',weight:540});
+  fit(ctx,note,center,noteY,wide?22:27,muted,746,{align:'center',weight:600});
+  fit(ctx,'No pressure, just clarity.',center,noteY+(wide?29:36),wide?20:24,muted,746,{align:'center',weight:540});
 }
 function caption(ctx, H, wide, cue, t, index, past, scene) {
   if (!cue) return;
@@ -518,9 +561,9 @@ function caption(ctx, H, wide, cue, t, index, past, scene) {
   const settle=ease(entry), exit=ease(leave);
   const lane=[0,2,1,3,0,1,2,3][index%8];
   const inUpper = scene!==11 && (lane===0 || lane===2);
-  const align = lane===0 || lane===1 ? 'left' : lane===2 ? 'right' : 'center';
+  const align = scene===11 ? 'center' : lane===0 || lane===1 ? 'left' : lane===2 ? 'right' : 'center';
   const xPlain = align==='left' ? 79 : align==='right' ? 881 : 480;
-  const yPlain = scene===11 ? H*(wide?.845:.775) :
+  const yPlain = scene===11 ? closingLayout(H,wide).captionY :
     wide ? H*[.102,.679,.751,.852][lane] :
     H*(inUpper ? [.302,.302,.304,.302][lane] : [.81,.81,.818,.848][lane]);
   const driftX = [48,-38,-55,10][lane] * (1-settle) + (lane===1?-18:19)*(1-exit);
