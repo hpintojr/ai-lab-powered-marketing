@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | Original specification | Gemini 4.0 Neon | Hamilton’s model credit |
 | Revised Mercury brief | Muse | Hamilton’s workflow credit |
-| Site, script adaptation, motion design and asset assembly | Codex with ChatGPT 6.2 Sol, high reasoning | Local turn context records `gpt-6.2-sol` at `high` |
+| Site, script adaptation, motion design and asset assembly | Codex with ChatGPT 6.2 Sol, high reasoning | Local turn context records `gpt-6.2-sol` at `high` for the main build and `medium` in the later motion pass |
 | Narration | ElevenLabs Voice Design and TTS v4 via MCP | Two custom podcast voices and one separate campaign narrator |
 | Campaign stills, soundtrack and word timings | GPT Image 2.5 Sunburst, ElevenLabs Music v2.5, and ElevenLabs Scribe via MCP | ElevenCreative campaign Flow |
 | Walkthrough editing | Claude Opus 5.5 and Ollama DeepSeek on Otto3 | Hamilton’s editor workflow credit. The walkthrough recording remains pending. |
@@ -14,20 +14,20 @@
 
 ## Measured Codex session
 
-Snapshot from Nov 20, 2026, 11:26 PM to Nov 21, 2026, 12:25 AM Pacific. Covers the original build and the campaign redesign through the final video renders. The session counters are cumulative model activity, including prompt cache reuse.
+Snapshot from Nov 20, 2026, 11:26 PM to Nov 21, 2026, 12:39 AM Pacific. Covers the original build and the latest motion revision up to the snapshot. The session counters are cumulative model activity, including prompt cache reuse.
 
 | Metric | Recorded |
 | --- | ---: |
-| Total tokens | 33,095,293 |
-| Input tokens | 32,989,999 |
-| Cached input tokens | 32,669,056 |
-| Uncached input tokens | 320,943 |
-| Output tokens | 105,294 |
-| Reasoning output, included in output | 24,011 |
-| Session elapsed time, including pauses | 58 min 43 sec |
-| Durations inside the completed and current Codex turns | 44 min 3 sec |
+| Total tokens | 42,046,902 |
+| Input tokens | 41,923,647 |
+| Cached input tokens | 41,556,480 |
+| Uncached input tokens | 367,167 |
+| Output tokens | 123,255 |
+| Reasoning output, included in output | 28,620 |
+| Session elapsed time, including pauses | 72 min 12 sec |
+| Durations inside the completed and current Codex turns | 51 min 31 sec |
 
-Final local export commands ran for about 42.4 seconds for vertical, 29.5 seconds for YouTube, and 32.7 seconds for LinkedIn. They ran concurrently, so the longest command was about 42 seconds.
+The previous campaign cut’s recorded local export commands ran for about 42.4 seconds for vertical, 29.5 seconds for YouTube, and 32.7 seconds for LinkedIn. They ran concurrently, so the longest command was about 42 seconds.
 
 ## Coverage
 

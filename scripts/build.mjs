@@ -47,7 +47,7 @@ const endCard = `<div class="endcard" aria-label="Mercury CRM closing screen pre
   <a class="button primary" href="${booking}">Book a strategy call</a>
   <p>We'll walk you through exactly how it builds. No pressure, just clarity.</p>
 </div>`;
-const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
+const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v3' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
 write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One campaign.</span>', 'An audio conversation about running AI agents as an organization, and a motion campaign for Mercury CRM. A learner project by Hamilton Pinto Jr.', `
   <section class="panel podcast" id="podcast" aria-labelledby="podcast-title">
     <div><span class="kicker">Thesis podcast</span><h2 id="podcast-title">The 18% Problem</h2>
@@ -60,7 +60,7 @@ write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One camp
   <section class="panel" id="commercial" aria-labelledby="commercial-title">
     <span class="kicker">Mercury CRM campaign</span><h2 id="commercial-title">Every tech wave needs a local expert</h2>
     <div class="campaign">
-      <div><p>The film starts on Main Street in 2002, then cuts to a Mercury CRM receptionist in action. Animated captions follow the voice as the story moves from a dial-up-era computer to calls, appointments, and follow-up.</p>
+      <div><p>The film starts on Main Street in 2002, then cuts to a Mercury CRM receptionist in action. A front-facing computer cutout gives way to illuminated storefronts, floating AI badges, and a three-step checklist punctuated by chimes.</p>
       ${exists(campaign) ? video(campaign, 'Mercury CRM motion campaign', commercialPoster) : '<p class="small">The commercial is in production. Preview the closing screen and read the original narration.</p>'}
       <div class="actions"><a href="/downloads/">Download campaign files</a><a href="/media/mercury-crm-storyboard.jpg">View the storyboard</a></div></div>
       ${endCard}

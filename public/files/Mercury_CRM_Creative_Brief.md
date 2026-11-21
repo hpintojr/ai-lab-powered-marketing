@@ -6,7 +6,7 @@ Local businesses needed someone to connect their computers in 2002. They face a 
 
 ## Visual direction
 
-Hamilton revisited the commercial brief with Muse and supplied a reference ad for pacing and visual language. The Mercury cut opens with a cream mid-century newspaper and period storefronts. A Bondi Blue iMac, a network error, and a technician’s toolbag carry the first act. At 15.36 seconds the film cuts to Mercury’s navy palette, animated call graphics, and an illustrative lead pipeline. The final beats return to the help-classified theme with the live demo and strategy call.
+Hamilton revisited the commercial brief with Muse and supplied a reference ad for pacing and visual language. The Mercury cut opens with a cream mid-century newspaper and period storefronts. A front-facing Bondi Blue iMac cutout, animated network errors, and a technician’s toolbag carry the first act. Each storefront is isolated from the original art and given its own sign and spotlight. At 15.36 seconds the film cuts to Mercury’s navy palette, floating AI badges for phone, calendar, and follow-up, then an illustrative lead pipeline. The badges and the three checkmarks are tied to short chimes. The strategy-call button pulses once near the end. The final beats return to the help-classified theme with the live demo and strategy call.
 
 | Sequence | What the viewer sees |
 | --- | --- |

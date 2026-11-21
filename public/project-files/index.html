@@ -24,7 +24,7 @@ Local businesses needed someone to connect their computers in 2002. They face a 
 
 ## Visual direction
 
-Hamilton revisited the commercial brief with Muse and supplied a reference ad for pacing and visual language. The Mercury cut opens with a cream mid-century newspaper and period storefronts. A Bondi Blue iMac, a network error, and a technician’s toolbag carry the first act. At 15.36 seconds the film cuts to Mercury’s navy palette, animated call graphics, and an illustrative lead pipeline. The final beats return to the help-classified theme with the live demo and strategy call.
+Hamilton revisited the commercial brief with Muse and supplied a reference ad for pacing and visual language. The Mercury cut opens with a cream mid-century newspaper and period storefronts. A front-facing Bondi Blue iMac cutout, animated network errors, and a technician’s toolbag carry the first act. Each storefront is isolated from the original art and given its own sign and spotlight. At 15.36 seconds the film cuts to Mercury’s navy palette, floating AI badges for phone, calendar, and follow-up, then an illustrative lead pipeline. The badges and the three checkmarks are tied to short chimes. The strategy-call button pulses once near the end. The final beats return to the help-classified theme with the live demo and strategy call.
 
 | Sequence | What the viewer sees |
 | --- | --- |
@@ -161,7 +161,7 @@ I used Gemini to shape the specification, Muse to revisit the commercial brief, 
 | --- | --- | --- |
 | Original specification | Gemini 4.0 Neon | Hamilton’s model credit |
 | Revised Mercury brief | Muse | Hamilton’s workflow credit |
-| Site, script adaptation, motion design and asset assembly | Codex with ChatGPT 6.2 Sol, high reasoning | Local turn context records `gpt-6.2-sol` at `high` |
+| Site, script adaptation, motion design and asset assembly | Codex with ChatGPT 6.2 Sol, high reasoning | Local turn context records `gpt-6.2-sol` at `high` for the main build and `medium` in the later motion pass |
 | Narration | ElevenLabs Voice Design and TTS v4 via MCP | Two custom podcast voices and one separate campaign narrator |
 | Campaign stills, soundtrack and word timings | GPT Image 2.5 Sunburst, ElevenLabs Music v2.5, and ElevenLabs Scribe via MCP | ElevenCreative campaign Flow |
 | Walkthrough editing | Claude Opus 5.5 and Ollama DeepSeek on Otto3 | Hamilton’s editor workflow credit. The walkthrough recording remains pending. |
@@ -169,20 +169,20 @@ I used Gemini to shape the specification, Muse to revisit the commercial brief, 
 
 ## Measured Codex session
 
-Snapshot from Nov 20, 2026, 11:26 PM to Nov 21, 2026, 12:25 AM Pacific. Covers the original build and the campaign redesign through the final video renders. The session counters are cumulative model activity, including prompt cache reuse.
+Snapshot from Nov 20, 2026, 11:26 PM to Nov 21, 2026, 12:39 AM Pacific. Covers the original build and the latest motion revision up to the snapshot. The session counters are cumulative model activity, including prompt cache reuse.
 
 | Metric | Recorded |
 | --- | ---: |
-| Total tokens | 33,095,293 |
-| Input tokens | 32,989,999 |
-| Cached input tokens | 32,669,056 |
-| Uncached input tokens | 320,943 |
-| Output tokens | 105,294 |
-| Reasoning output, included in output | 24,011 |
-| Session elapsed time, including pauses | 58 min 43 sec |
-| Durations inside the completed and current Codex turns | 44 min 3 sec |
+| Total tokens | 42,046,902 |
+| Input tokens | 41,923,647 |
+| Cached input tokens | 41,556,480 |
+| Uncached input tokens | 367,167 |
+| Output tokens | 123,255 |
+| Reasoning output, included in output | 28,620 |
+| Session elapsed time, including pauses | 72 min 12 sec |
+| Durations inside the completed and current Codex turns | 51 min 31 sec |
 
-Final local export commands ran for about 42.4 seconds for vertical, 29.5 seconds for YouTube, and 32.7 seconds for LinkedIn. They ran concurrently, so the longest command was about 42 seconds.
+The previous campaign cut’s recorded local export commands ran for about 42.4 seconds for vertical, 29.5 seconds for YouTube, and 32.7 seconds for LinkedIn. They ran concurrently, so the longest command was about 42 seconds.
 
 ## Coverage
 
@@ -196,7 +196,7 @@ To refresh the Codex snapshot, run `node scripts/summarize-codex-usage.mjs &lt;s
 ## Deliverables
 
 - The thesis podcast runs 2 minutes 35 seconds. The custom female host and custom American male co-host alternate nine turns, ending with the host’s thank-you.
-- The final campaign runs 49 seconds. One voice track and music mix drive three independent compositions. On-screen captions are matched to the revised narration with Scribe word timings.
+- The final campaign runs 49 seconds. One voice track and music mix drive three independent compositions. On-screen captions are matched to the narration with Scribe word timings. The production renderer uses the same cue table for the AI badge entrances, checklist timing, and synthesized chimes.
 - All MP4 files contain H.264 video and AAC audio at 30 frames per second. Vertical is 1080 × 1920, landscape is 1920 × 1080, and LinkedIn portrait is 1080 × 1350.
 - The updated brand uses the supplied Mercury mark. Original generative stills, infographic graphics, and type were composed for the Mercury release. The pipeline is labeled as an example.
 - Updated positioning uses the product offer and a dated, scoped Census finding. See the [creative brief](./Mercury_CRM_Creative_Brief.md) for source and scope.
