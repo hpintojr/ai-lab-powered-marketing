@@ -10,7 +10,7 @@ const write = (name, html) => { mkdirSync(dirname(join(root, name)), { recursive
 const e = (s) => s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const thesis = 'https://hamiltonpinto.com/masterclass/the-18-percent-problem-running-ai-like-a-company-not-a-chatbot';
 const hub = 'https://hamiltonpinto.com/MCX-AI-Labs';
-const booking = 'https://hamiltonpinto.com/strategy';
+const booking = 'https://www.getmercurycrm.com/';
 const audio = 'media/thesis-podcast-v4.mp3';
 const walkthrough = 'media/lab04-walkthrough.mp4';
 const campaign = 'media/mercury-crm-youtube.mp4';
