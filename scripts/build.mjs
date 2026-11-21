@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -5,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 (function () {
 const root = fileURLToPath(new URL('../public/', import.meta.url));
 const read = (name) => readFileSync(join(root, name), 'utf8');
+const assetVersion = (name) => createHash('sha256').update(readFileSync(join(root, name))).digest('hex').slice(0, 10);
+const stylesheetVersion = assetVersion('project.css');
 const exists = (name) => existsSync(join(root, name));
 const write = (name, html) => { mkdirSync(dirname(join(root, name)), { recursive: true }); writeFileSync(join(root, name), html); };
 const e = (s) => s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -26,7 +29,7 @@ const shell = (title, heading, intro, body, options = {}) => `<!doctype html>
   <meta name="theme-color" content="#071426">
   <meta name="description" content="${e(intro)}">
   <title>${e(title)} | MasterClass Executive AI Lab 04</title>
-  <link rel="stylesheet" href="/project.css">
+  <link rel="stylesheet" href="/project.css?v=${stylesheetVersion}">
 ${options.reader ? '<script defer src="/reader.js"></script>' : ''}
 </head>
 <body>
@@ -45,26 +48,27 @@ const endCard = `<div class="endcard" aria-label="Mercury CRM closing screen pre
   <img src="/brand/mercury-crm-logo-dark.svg" alt="Mercury CRM">
   <h3>Book a call to learn more</h3>
   <a class="button primary" href="${booking}">Book a strategy call</a>
-  <p>We'll walk you through exactly how it builds. No pressure, just clarity.</p>
+  <p>We'll walk you through exactly how it's built. No pressure, just clarity.</p>
 </div>`;
-const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v5' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
+const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}?v=${assetVersion(poster)}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v5' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
 write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One campaign.</span>', 'An audio conversation about running AI agents as an organization, and a motion campaign for Mercury CRM. A learner project by Hamilton Pinto Jr.', `
   <section class="panel podcast" id="podcast" aria-labelledby="podcast-title">
     <div><span class="kicker">Thesis podcast</span><h2 id="podcast-title">The 18% Problem</h2>
     <p>Two voices explore Hamilton Pinto Jr.’s thesis, <em>Running AI Like a Company, Not a Chatbot</em>, and what it takes to give agents roles, scoped permissions and a record of their actions.</p>
     ${exists(audio) ? `<audio controls preload="metadata" aria-label="Listen to The 18% Problem podcast"><source src="/${audio}?v=edc8fe378929" type="audio/mpeg"><a href="/${audio}">Download the podcast</a></audio><p class="small">Synthetic host and guest · ElevenLabs Text-to-Speech v4</p>` : '<p role="status">The audio edition is in production. You can read the conversation below.</p>'}
     <div class="actions"><a href="${thesis}#podcast">Open the original thesis</a>${exists(audio) ? ` <a href="/${audio}" download>Download MP3</a>` : ''}</div>
-    <details><summary>Read the transcript</summary>${transcriptHtml}</details></div>
+    </div>
     <img class="cover" src="/media/thesis-podcast-cover.jpg" alt="An AI operator at a desk with a chain of linked records" loading="lazy">
+    <details><summary>Read the transcript</summary>${transcriptHtml}</details>
   </section>
   <section class="panel" id="commercial" aria-labelledby="commercial-title">
     <span class="kicker">Mercury CRM campaign</span><h2 id="commercial-title">Every tech wave needs a local expert</h2>
+    <p class="campaign-intro">The film starts on Main Street in 2002, then cuts to a Mercury CRM receptionist in action. A front-facing computer cutout gives way to illuminated storefronts, floating AI badges, and a three-step checklist punctuated by chimes.</p>
     <div class="campaign">
-      <div><p>The film starts on Main Street in 2002, then cuts to a Mercury CRM receptionist in action. A front-facing computer cutout gives way to illuminated storefronts, floating AI badges, and a three-step checklist punctuated by chimes.</p>
       ${exists(campaign) ? video(campaign, 'Mercury CRM motion campaign', commercialPoster) : '<p class="small">The commercial is in production. Preview the closing screen and read the original narration.</p>'}
-      <div class="actions"><a href="/downloads/">Download campaign files</a><a href="/media/mercury-crm-storyboard.jpg">View the storyboard</a></div></div>
       ${endCard}
     </div>
+    <div class="actions"><a href="/downloads/">Download campaign files</a><a href="/media/mercury-crm-storyboard.jpg">View the storyboard</a></div>
   </section>
   <section class="panel" id="production" aria-labelledby="production-title">
     <span class="kicker">Production</span><h2 id="production-title">Models, time and tokens</h2>

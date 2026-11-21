@@ -652,7 +652,7 @@ function frameArt(ctx,H,wide,tall,index,local,opacity) {
   }
   ctx.restore();
 }
-function render(canvas, t) {
+function render(canvas, t, {showCaptions = true} = {}) {
   const ctx=canvas.getContext('2d'), H=960*canvas.height/canvas.width, wide=H<650, tall=H>1300;
   const index=Math.max(0,timing.scenes.findLastIndex(scene=>scene.at<=t));
   const scene=timing.scenes[index], local=t-scene.at, past=index<4;
@@ -670,7 +670,7 @@ function render(canvas, t) {
     wake.addColorStop(0,'#6caeff00');wake.addColorStop(.73,'rgba(156,209,255,'+(.31*(1-slide))+')');wake.addColorStop(1,'#bce6ff00');
     shape(ctx,C(xx-150,0,222,H),wake);
   }
-  caption(ctx,H,wide,timing.cues[cap],t,cap,past,index);
+  if (showCaptions) caption(ctx,H,wide,timing.cues[cap],t,cap,past,index);
   const lineY=H*(wide?.955:.923);
   rule(ctx,79,lineY,881,lineY,past?'#254d4566':'#8dc6e166',1);
   rule(ctx,79,lineY,mix(79,881,progress(t,timing.duration)),lineY,past?teal:sky,2.4);
@@ -740,7 +740,7 @@ async function plates() {
   await writeFile(join(work,'mercury-preview.jpg'),thumbnails.toBuffer('image/jpeg',91));
   await writeFile(join(media,'mercury-crm-storyboard.jpg'),tiles.toBuffer('image/jpeg',93));
   const poster = createCanvas(1280,720);
-  render(poster,.9);
+  render(poster,.9,{showCaptions:false});
   await writeFile(join(media,'mercury-ad-poster.jpg'),poster.toBuffer('image/jpeg',94));
   render(poster,timing.duration-.3);
   await writeFile(join(media,'mercury-commercial-endcard.png'),poster.toBuffer('image/png'));
