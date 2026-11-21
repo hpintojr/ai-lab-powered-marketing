@@ -1,0 +1,108 @@
+{
+  "slug": "ai-powered-marketing",
+  "number": "04",
+  "title": "AI-Powered Marketing: Campaigns, Voice, and Video",
+  "status": "completed",
+  "when": "Completed November 2026",
+  "cardSummary": "Hybrid ElevenLabs MCP + voice/campaign workflow pairing a TTS v4 podcast of The 18% Problem thesis with a 30s Mercury CRM commercial and custom end card.",
+  "assetBase": "/MCX-AI-Labs/files/ai-powered-marketing",
+  "repo": {
+    "name": "hpintojr/ai-lab-powered-marketing",
+    "private": false
+  },
+  "officialUrl": "https://ai-lab-powered-marketing.vercel.app",
+  "hero": {
+    "a": "Two AI voices, one thesis.",
+    "b": "From the 18% governance problem to Mercury CRM."
+  },
+  "lede": "Built in a hybrid workflow connecting ElevenLabs MCP and ElevenLabs voice/campaign production, Lab 04 pairs a natural Text-to-Speech v4 podcast adaptation of my thesis—The 18% Problem: Running AI Like a Company, Not a Chatbot—with a 30-second Mercury CRM commercial and a custom Mercury CRM closing end card.",
+  "facts": [
+    [
+      "Case",
+      "Mercury CRM &amp; 18% Thesis<br><span class=\"dim\">Hybrid MCP + Voice/Creative</span>"
+    ],
+    [
+      "Deliverables",
+      "TTS v4 Podcast + 30s Ad<br><span class=\"dim\">Custom Mercury CRM end card</span>"
+    ],
+    [
+      "Portfolio",
+      "4 of 12 Labs Complete<br><span class=\"dim\">33% cohort progress</span>"
+    ]
+  ],
+  "cta": [
+    {
+      "label": "Open project site",
+      "href": "https://ai-lab-powered-marketing.vercel.app",
+      "primary": true
+    },
+    {
+      "label": "Read recording script",
+      "href": "https://ai-lab-powered-marketing.vercel.app/script/"
+    }
+  ],
+  "showcase": {
+    "title": "The deliverables",
+    "cards": [
+      {
+        "tag": "Part 1 · TTS v4 Podcast",
+        "title": "The 18% Problem — Live Podcast Edition",
+        "body": "Natural ElevenLabs Text-to-Speech v4 audio adaptation introducing the author, title, and core thesis on running AI like a governed company rather than a chatbot.",
+        "href": "https://ai-lab-powered-marketing.vercel.app",
+        "link": "View Part 1 showcase"
+      },
+      {
+        "tag": "Part 2 · Commercial",
+        "title": "Mercury CRM 30s Ad & End Card",
+        "body": "Commercial script and closing screen featuring the Mercury CRM logo at top, 'Book a call to learn more', 'Book a strategy call' button, and 'We'll walk you through exactly how it builds. No pressure, just clarity.'",
+        "href": "https://ai-lab-powered-marketing.vercel.app/#commercial",
+        "link": "View Part 2 commercial"
+      },
+      {
+        "tag": "Reader",
+        "title": "Walkthrough recording script",
+        "body": "Timed 3–5 minute presentation script with screen cues covering the thesis podcast, Mercury CRM commercial, and AI leadership impact.",
+        "href": "https://ai-lab-powered-marketing.vercel.app/script/",
+        "link": "Open script reader"
+      }
+    ]
+  },
+  "proof": [
+    {
+      "group": "Scripts and narration",
+      "items": [
+        {
+          "label": "Walkthrough recording script",
+          "href": "/files/Recording_Script.md",
+          "meta": "MD · 3–5 min presentation script"
+        },
+        {
+          "label": "Thesis podcast (TTS v4)",
+          "href": "/files/Thesis_Podcast_TTS_v4.md",
+          "meta": "MD · natural spoken thesis script"
+        },
+        {
+          "label": "Mercury CRM commercial script",
+          "href": "/files/Mercury_CRM_Commercial_Script.md",
+          "meta": "MD · 30s script + exact end-card spec"
+        }
+      ]
+    },
+    {
+      "group": "Workflow and verification",
+      "items": [
+        {
+          "label": "Hybrid MCP & creative workflow",
+          "href": "/files/ElevenLabs_MCP_Flows_Workflow.md",
+          "meta": "MD · MCP + voice/campaign notes"
+        },
+        {
+          "label": "Verification record",
+          "href": "/files/Verification_Record.md",
+          "meta": "MD · checks and manual media drop-ins"
+        }
+      ]
+    }
+  ],
+  "related": []
+}
