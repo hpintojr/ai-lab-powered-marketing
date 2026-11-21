@@ -52,7 +52,7 @@ write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One camp
   <section class="panel podcast" id="podcast" aria-labelledby="podcast-title">
     <div><span class="kicker">Thesis podcast</span><h2 id="podcast-title">The 18% Problem</h2>
     <p>Two voices explore Hamilton Pinto Jr.’s thesis, <em>Running AI Like a Company, Not a Chatbot</em>, and what it takes to give agents roles, scoped permissions and a record of their actions.</p>
-    ${exists(audio) ? `<audio controls preload="metadata" aria-label="Listen to The 18% Problem podcast"><source src="/${audio}" type="audio/mpeg"><a href="/${audio}">Download the podcast</a></audio><p class="small">Synthetic host and guest · ElevenLabs Text-to-Speech v4</p>` : '<p role="status">The audio edition is in production. You can read the conversation below.</p>'}
+    ${exists(audio) ? `<audio controls preload="metadata" aria-label="Listen to The 18% Problem podcast"><source src="/${audio}?v=edc8fe378929" type="audio/mpeg"><a href="/${audio}">Download the podcast</a></audio><p class="small">Synthetic host and guest · ElevenLabs Text-to-Speech v4</p>` : '<p role="status">The audio edition is in production. You can read the conversation below.</p>'}
     <div class="actions"><a href="${thesis}#podcast">Open the original thesis</a>${exists(audio) ? ` <a href="/${audio}" download>Download MP3</a>` : ''}</div>
     <details><summary>Read the transcript</summary>${transcriptHtml}</details></div>
     <img class="cover" src="/media/thesis-podcast-cover.jpg" alt="An AI operator at a desk with a chain of linked records" loading="lazy">
