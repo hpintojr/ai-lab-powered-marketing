@@ -19,3 +19,5 @@ Only eighteen percent of organizations keep a complete inventory of the AI agent
 [measured] And if we're going to be leaders in this shift, we have to be honest about where systems are still exposed. Runaway loops, missing spend caps, context compaction dropping safety rules, unverified token lifetimes, and A2P or TCPA compliance aren't edge cases—they're operational realities.
 
 [confident, clear] Here is the core thesis I want to leave you with: the next standard for AI fleets won't be a cleverer prompt. It will be a verifiable chain of custody—who acted, under whose authority, what was approved, and an append-only record nobody can quietly rewrite. AI isn't just a better chatbot. It's a new way of organizing work.
+
+[calm, closing] If you want the full breakdown of how I spec'd this out with Gemini, built the site with Codex, and ran the editing pipeline through Claude on my Otto3 production server, check out the AI Lab project page and recording script.
