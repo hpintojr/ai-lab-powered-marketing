@@ -16,6 +16,7 @@ const hub = 'https://hamiltonpinto.com/MCX-AI-Labs';
 const booking = 'https://www.getmercurycrm.com/';
 const audio = 'media/thesis-podcast-v4.mp3';
 const walkthrough = 'media/lab04-walkthrough.mp4';
+const walkthroughVersion = exists(walkthrough) ? `?v=${assetVersion(walkthrough)}` : '';
 const walkthroughPoster = 'media/lab04-walkthrough-poster.jpg';
 const walkthroughCaptions = 'media/lab04-walkthrough.srt';
 const campaign = 'media/mercury-crm-youtube.mp4';
@@ -52,7 +53,8 @@ const endCard = `<div class="endcard" aria-label="Mercury CRM closing screen pre
   <a class="button primary" href="${booking}">Book a strategy call</a>
   <p>We'll walk you through exactly how it's built. No pressure, just clarity.</p>
 </div>`;
-const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}?v=${assetVersion(poster)}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v5' : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
+const video = (path, title, poster) => `<video controls playsinline preload="metadata" aria-label="${e(title)}"${poster && exists(poster) ? ` poster="/${poster}?v=${assetVersion(poster)}"` : ''}><source src="/${path}${path === campaign ? '?v=main-street-v5' : path === walkthrough ? walkthroughVersion : ''}" type="video/mp4"><a href="/${path}">Download the video</a></video>`;
+const walkthroughPlayer = exists(walkthrough) ? video(walkthrough, 'Hamilton Pinto Jr. presents AI Lab 04', walkthroughPoster) : '';
 write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One campaign.</span>', 'An audio conversation about running AI agents as an organization, and a motion campaign for Mercury CRM. A learner project by Hamilton Pinto Jr.', `
   <section class="panel podcast" id="podcast" aria-labelledby="podcast-title">
     <div><span class="kicker">Thesis podcast</span><h2 id="podcast-title">The 18% Problem</h2>
@@ -79,7 +81,7 @@ write('index.html', shell('AI-Powered Marketing', 'One thesis.<br><span>One camp
   </section>
   <section class="panel" id="walkthrough" aria-labelledby="walkthrough-title">
     <span class="kicker">MasterClass Executive submission</span><h2 id="walkthrough-title">Project walkthrough</h2>
-    ${exists(walkthrough) ? video(walkthrough, 'Hamilton Pinto Jr. presents AI Lab 04', walkthroughPoster) : '<p>Hamilton’s 3–5 minute screen-recorded walkthrough is in production.</p>'}
+    ${walkthroughPlayer || '<p>Hamilton’s 3–5 minute screen-recorded walkthrough is in production.</p>'}
     <div class="actions"><a href="/script/">Read the recording script</a><a href="/files/Recording_Script.md" download>Download script (Markdown)</a>${exists(walkthroughCaptions) ? `<a href="/${walkthroughCaptions}" download>Download captions (SRT)</a>` : ''}<a href="/files/Verification_Record.md">View production and verification record</a></div>
   </section>`, {actions:`<div class="actions"><a class="button primary" href="#podcast">Listen to the podcast</a><a class="button" href="#commercial">Explore the campaign</a>${exists(walkthrough) ? '<a class="button" href="#walkthrough">Watch the walkthrough</a>' : ''}</div>`}));
 const script = read('files/Recording_Script.md').trim().split(/\r?\n## /).slice(1);
@@ -87,8 +89,14 @@ const readerHtml = script.map((section) => {
   const [heading, ...paragraphs] = section.trim().split(/\r?\n\r?\n/);
   return `<section class="panel"><h2>${e(heading)}</h2>${paragraphs.map((p) => p.startsWith('> ') ? `<p class="cue">${e(p.slice(2))}</p>` : `<p class="spoken">${e(p)}</p>`).join('\n')}</section>`;
 }).join('\n');
-write('script/index.html', shell('Recording script', 'Project walkthrough', 'A timed reader with screen cues for Hamilton’s original 3–5 minute narration.', `
-  <div class="toolbar" aria-label="Reader controls"><button class="button" type="button" data-cues aria-pressed="false">Hide screen cues</button><button class="button" type="button" data-size="-0.125" aria-label="Decrease text size">A−</button><button class="button" type="button" data-size="0.125" aria-label="Increase text size">A+</button><a class="button" href="/files/Recording_Script.md">Download Markdown</a></div>
+write('script/index.html', shell('Recording script', 'Project walkthrough', 'Watch Hamilton’s presentation, then follow the recording script and screen cues below.', `
+  ${walkthroughPlayer ? `<section class="panel" id="presentation" aria-labelledby="presentation-title">
+    <h2 id="presentation-title">Watch the presentation</h2>
+    ${walkthroughPlayer}
+    <p class="small">4:15 · 1080p · Captioned</p>
+    <div class="actions"><a href="#recording-script">Jump to the script</a><a href="/downloads/">Download the presentation and campaign formats</a></div>
+  </section>` : ''}
+  <div class="toolbar" id="recording-script" aria-label="Reader controls"><button class="button" type="button" data-cues aria-pressed="false">Hide screen cues</button><button class="button" type="button" data-size="-0.125" aria-label="Decrease text size">A−</button><button class="button" type="button" data-size="0.125" aria-label="Increase text size">A+</button><a class="button" href="/files/Recording_Script.md">Download Markdown</a></div>
   ${readerHtml}`, {reader:true}));
 const downloads = [
   ['Recording script','Timed walkthrough with screen cues','files/Recording_Script.md'],
@@ -96,9 +104,9 @@ const downloads = [
   ['Podcast audio','ElevenLabs v4 narration · MP3',audio],
   ['Mercury CRM creative brief','Visual direction, positioning and the Census source','files/Mercury_CRM_Creative_Brief.md'],
   ['Mercury CRM commercial script','Release narration and closing-screen layout','files/Mercury_CRM_Commercial_Script.md'],
-  ['Instagram Reels and YouTube Shorts','9:16 · full on-screen captions','media/mercury-crm-vertical.mp4'],
-  ['YouTube','16:9 · full on-screen captions',campaign],
-  ['LinkedIn','4:5 · full on-screen captions','media/mercury-crm-linkedin.mp4'],
+  ['Instagram Reels and YouTube Shorts','9:16 · 1080 × 1920 · full on-screen captions','media/mercury-crm-vertical.mp4'],
+  ['YouTube','16:9 · 1920 × 1080 · full on-screen captions',campaign],
+  ['LinkedIn','4:5 · 1080 × 1350 · full on-screen captions','media/mercury-crm-linkedin.mp4'],
   ['Campaign storyboard','Twelve production frames','media/mercury-crm-storyboard.jpg'],
   ['Mercury CRM end card','Landscape PNG','media/mercury-commercial-endcard.png'],
   ['Mercury CRM logo','Dark-background SVG','brand/mercury-crm-logo-dark.svg'],
@@ -108,7 +116,7 @@ const downloads = [
   ['Project walkthrough','Hamilton’s own voice · 4:15 · MP4',walkthrough],
   ['Walkthrough captions','Timed captions for the final cut · SRT',walkthroughCaptions],
 ];
-write('downloads/index.html', shell('Downloads', 'Project files', 'Download the scripts, production notes and available media exports.', `<div class="files">${downloads.filter((item) => exists(item[2])).map(([label, desc, path]) => `<article class="panel"><h2>${e(label)}</h2><p>${e(desc)}</p><a href="/${path}" download aria-label="${e('Download ' + label)}">Download</a></article>`).join('\n')}</div>`));
+write('downloads/index.html', shell('Downloads', 'Project files', 'Download the scripts, production notes and available media exports.', `<div class="files">${downloads.filter((item) => exists(item[2])).map(([label, desc, path]) => `<article class="panel"><h2>${e(label)}</h2><p>${e(desc)}</p><a href="/${path}${path === walkthrough ? walkthroughVersion : ''}" download aria-label="${e('Download ' + label)}">Download</a></article>`).join('\n')}</div>`));
 const documents = [
   [
     "Mercury CRM creative brief",
