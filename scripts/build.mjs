@@ -99,6 +99,7 @@ write('script/index.html', shell('Recording script', 'Project walkthrough', 'Wat
   <div class="toolbar" id="recording-script" aria-label="Reader controls"><button class="button" type="button" data-cues aria-pressed="false">Hide screen cues</button><button class="button" type="button" data-size="-0.125" aria-label="Decrease text size">A−</button><button class="button" type="button" data-size="0.125" aria-label="Increase text size">A+</button><a class="button" href="/files/Recording_Script.md">Download Markdown</a></div>
   ${readerHtml}`, {reader:true}));
 const downloads = [
+  ['Gemini initial scaffolding prompt','Original Lab 04 project specification · Markdown','files/INITIAL_SCAFFOLDING_PROMPT.md'],
   ['Recording script','Timed walkthrough with screen cues','files/Recording_Script.md'],
   ['Podcast transcript','Two-person conversation adapted from the thesis','files/Thesis_Podcast_TTS_v4.md'],
   ['Podcast audio','ElevenLabs v4 narration · MP3',audio],
@@ -118,6 +119,11 @@ const downloads = [
 ];
 write('downloads/index.html', shell('Downloads', 'Project files', 'Download the scripts, production notes and available media exports.', `<div class="files">${downloads.filter((item) => exists(item[2])).map(([label, desc, path]) => `<article class="panel"><h2>${e(label)}</h2><p>${e(desc)}</p><a href="/${path}${path === walkthrough ? walkthroughVersion : ''}" download aria-label="${e('Download ' + label)}">Download</a></article>`).join('\n')}</div>`));
 const documents = [
+  [
+    "Gemini initial scaffolding prompt",
+    "Original Lab 04 project specification from Gemini",
+    "public/files/INITIAL_SCAFFOLDING_PROMPT.md"
+  ],
   [
     "Mercury CRM creative brief",
     "The story and visual direction",
